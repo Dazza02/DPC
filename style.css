@@ -119,3 +119,27 @@ padding: 30px 30px 20px;
         flex: 1;
         overflow: scroll;
       }
+
+      .footer {
+display: flex;
+position: FIXED;
+position: sticky;
+align-items: bottom;
+margin top: 80%;
+        left: 0;
+        bottom: 0;
+        width: 1440px;
+        background-color: rgb(23, 83, 139);
+        color: white;
+        text-align: center;
+        }
+      
+        .footer .image-column {
+width:84%;
+margin: auto;
+padding: 20px 0;
+display: flex;
+align-items: center;
+justify-content: space-between;
+        }
+
