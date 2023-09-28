@@ -9,6 +9,8 @@ font-size: 30px;
     --secondary-color: #fff;
 }
 
+@media screen and (max-width: 1920px)
+{
 
 h1 {color: rgb(27, 177, 214);
     padding-left: 8%;
@@ -89,7 +91,31 @@ align-items: center;
         margin: auto;
         justify-content: space-between;
         display: flex;
-    .alt {
-        {color:  var(--primary-color);
+      }
     }
+  
+.container {
+width: 100%;
+  }
+
+  .h1 {
+color: rgb(27, 177, 214);
+padding: 30px 30px 20px;
+  }
+  .h2 {
+    color: rgb(27, 177, 214);
+    padding: 30px 30px 20px;
+      }
+    
+      body {
+        display: flex;
+        flex-direction: column;
+        max-width: 1440px;
+        margin: 0 auto;
+        height: 100vh;
+      }
+
+      main {
+        flex: 1;
+        overflow: scroll;
       }
