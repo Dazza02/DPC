@@ -122,20 +122,20 @@ padding: 30px 30px 20px;
 
       .footer {
 display: flex;
-position: fixed;
+position: FIXED;
+position: sticky;
 align-items: bottom;
 margin top: 80%;
         left: 0;
         bottom: 0;
-       max-width: 1440px;
+        width: 1440px;
+        height: 100px;
         background-color: rgb(23, 83, 139);
         color: white;
         text-align: center;
-                  flex: 1;
-        overflow: scroll;
         }
       
-.image-column {
+        .footer .image-column {
 width:84%;
 margin: auto;
 padding: 20px 0;
