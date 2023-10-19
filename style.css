@@ -144,3 +144,14 @@ align-items: center;
 justify-content: space-between;
         }
 
+.myImg{
+  padding: 2rem 5%;
+  columns: 15rem 3;
+  gap: 1.4rem;
+}
+
+.myImg img{
+  width: 100%;
+  margin-bottom: 1rem;
+  border-radius: 0.7rem;
+}
