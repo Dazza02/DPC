@@ -203,6 +203,9 @@ p {
     position: relative;
     margin: 0;
 }
+.content {
+    margin-top: 1rem;
+}
 .content p {
     background-size: cover;
     overflow: auto;
