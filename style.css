@@ -40,7 +40,6 @@ nav ul li a {
 text-decoration: none;
 color: #fff;
 font-size: 17px;
-
 font-weight: 600;
 }
 a :hover {
@@ -49,32 +48,35 @@ a :hover {
 }
 .content {
     text-align: center;
+    margin-top: 5%;
+
 }
 h1 {
 font-size: 80px;
 color: #fff;
 font-weight: 600;
+padding-bottom: 2%;
 }
 h1:hover {
     -webkit-text-stroke: 2px #fff;
     color: transparent;
 }
-p {
-    color: #fff;
-    font-size: 25px;
-    font-weight: 600;
-    padding: 50px 50px;
-}
+
 .testimonials {
+    background-image: linear-gradient(rgba(0, 140, 255, 0.743),rgba(16, 51, 79, 0.743));
     text-align: center;
     position: relative;
-    padding: 20px 20px;
+    padding: 50px 50px;
     display: flex;
     justify-content: center;
     width: 100%;
     height: auto;
     overflow: hidden;
 }
+.testimonials p {
+    margin-right: 10%;
+    margin-left: 10%;
+}
 h1 {
 font-size: 80px;
 color: #fff;
@@ -84,16 +86,23 @@ h1:hover {
     -webkit-text-stroke: 2px #fff;
     color: transparent;
 }
+h2 {
+    font-size: 60px;
+    color: #fff;
+    font-weight: 400;
+    }
+    h1:hover {
+        -webkit-text-stroke: 2px #fff;
+        color: transparent;
+    }
 p {
     color: #fff;
-    font-size: 25px;
+    font-size: 20px;
     font-weight: 600;
-    padding: 40px 0;
+    padding: 30px 0;
 
 }
-.testimonials {
-    background-image: linear-gradient(rgba(0, 140, 255, 0.743),rgba(16, 51, 79, 0.743));
-}
+
 .footer img {
     width: 80px;
     max-height: 80px;
@@ -110,23 +119,26 @@ p {
     align-items: center;
     background-color: #fff;
 }
-.about {
-    margin-top: 60px;
-    padding-top: 60px;
-    height: auto;
-}
-.content .myImg{
-    margin-top: 60px;
-    margin-bottom: 60px;
+
+.myImg{
+    margin-top: 5%;
+    margin-bottom: 5%;
     padding: 2rem 5%;
     columns: 15rem 3;
     gap: 1.4rem;
+    overflow: scroll;
   }
   
   .content .myImg img{
     width: 100%;
     margin-bottom: 1rem;
     border-radius: 0.7rem;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    padding: 2rem 5%;
+    columns: 15rem 3;
+    gap: 1.4rem;
+    overflow: scroll;
   }
   iframe 
 {height: 100vh;
@@ -134,19 +146,21 @@ width: 100vw;
 margin-top: 10%;
 }
 
-section {
-    margin-top: 20%;
-    text-align: left;
-    margin-left: 5%;
-    margin-right: 50%;
-    overflow: visible;
-}
-.wrapper img {
-    max-width: 320px;
+.column {
     float: left;
-    margin-right: 15px;
+    width: 50%;
+    box-sizing: border-box;
+    padding: 10px;
+    padding-bottom: 5%;
+    padding-top: 3%;
 }
-.wrapper {
-    margin: 150px auto;
-    width: 70%;
+.column img {
+    margin-top: 10%;
+}
+.best-seller {
+    width: 30%;
+    height: fit-content;
+}
+img {
+    border-radius: 5%;
 }
