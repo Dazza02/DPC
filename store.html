@@ -1,35 +1,94 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-  <title> Dale's Photo Creations Store</title>
-  <link rel="stylesheet" href="style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="style.css">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+  position: relative;
+}
+
+.topnav #myLinks {
+  display: none;
+}
+
+.topnav a {
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  display: block;
+}
+
+.topnav a.icon {
+  background: black;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.active {
+  background-color: #0457aa;
+  color: white;
+}
+</style>
 </head>
-
 <body>
-  <div class="container2">
-    <nav>
-      <a href="index.html"><img src="Logo.png" alt="logo" style="width:42px;height:42px;"></a></a>
-      <tr>
-        <td> <a href="index.html"> Home</a> </td>
-        <td> <a href="about.html"> About</a> </td>
-        <td> <a href="creations.html"> Creations</a> </td>
-        <td> <a href="store.html"> Store</a> </td>
-      </tr>
-    </nav>
+
+<!-- Simulate a smartphone / tablet -->
+<div class="mobile-container">
+
+<!-- Top Navigation Menu -->
+<div class="topnav">
+  <a href="index.html" class="active">DALE'S PHOTO CREATIONS</a>
+  <div id="myLinks">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="creations.html">Creations</a>
+    <a href="store.html">Store</a>
   </div>
-  </head>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
 
-  <body>
-    <iframe src="https://dales-photo-creations.square.site/" width=100vd; height=100vh; frameborder="0"></iframe>
+<iframe src="https://dales-photo-creations.square.site/" width=100vd; height=100vh; frameborder="0"></iframe>
 
-    <div class="social-links">
-		<p> <SPAN>FOLLOW OUR SOCIALS!</SPAN></p>
-		<a href="https://www.facebook.com/Dalesphotocreations/"><img src="Facebook.png"></a>
-		<a href="https://www.instagram.com/_dalesphotocreations_/"><img src="Instagram.png"></a>
-		<a href="https://www.youtube.com/channel/UCsLWhkqD3dYz9_nwicqgL0Q"><img src="youtube.png"></a>
-		<a href="mailto:dalesphotocreations@gmail.com"><img src="mail.png"></a>
-	</div>
-  </body>
+<div class="social-links">
+  <p> <SPAN>FOLLOW OUR SOCIALS!</SPAN></p>
+  <a href="https://www.facebook.com/Dalesphotocreations/"><img src="Facebook.png"></a>
+  <a href="https://www.instagram.com/_dalesphotocreations_/"><img src="Instagram.png"></a>
+  <a href="https://www.youtube.com/channel/UCsLWhkqD3dYz9_nwicqgL0Q"><img src="youtube.png"></a>
+  <a href="mailto:dalesphotocreations@gmail.com"><img src="mail.png"></a>
+</div>
 
+<!-- End smartphone / tablet look -->
+</div>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myLinks");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+</script>
+
+</body>
 </html>
