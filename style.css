@@ -1,6 +1,6 @@
 * {
     font-family: Bradley Texting Pro;
-    font-size: 20px;
+    font-size: 16px;
     text-align: center;
     align-items: center;
     --primary-color: #1f1f1f;
@@ -11,7 +11,7 @@
 
 .topnav {
     overflow: hidden;
-    background-color: #333;
+    background-color: ##048eaa;
     position: relative;
   }
   
@@ -28,7 +28,7 @@
   }
   
   .topnav a.icon {
-     background-color: #048eaa;
+    background: #048eaa;
     display: block;
     position: absolute;
     right: 0;
@@ -52,7 +52,6 @@
 h1 {
     text-align: center;
     font-weight: 500;
-    font-size: 2rem;
     color: rgb(27, 177, 214);
     padding-left: 8%;
     padding-right: 8%;
@@ -62,7 +61,6 @@ h1 {
 h2 {
     text-align: center;
     font-weight: 500;
-    font-size: 2rem;
     color: rgb(27, 177, 214);
     padding-left: 8%;
     padding-right: 8%;
@@ -85,7 +83,7 @@ span {
 
 section{
     background-color: #0a303d;
-    margin: 1rem; 
+    margin: 0.5rem 1rem; 
     border-radius: 1rem;
 }
 
@@ -128,10 +126,14 @@ img {
 .best-seller {
     max-width: 50%;
     border-radius: 1rem;
+    margin: 0 1rem;
+    align-items: center;
 }
 
 .about-image{
     border-radius: 1rem;
+    max-width: 50%;
+    margin: 1rem;
 }
 
 .container2 {
@@ -148,9 +150,8 @@ img {
 .testimonials{
     background-color: rgba(46, 9, 106, 0.583);
     background-blend-mode: hue;
-    margin: 1rem 1rem 0;
+    margin: 1rem 2rem 0;
     border-radius: 2rem;
-
 }
 
 .social-links img{
@@ -159,4 +160,86 @@ img {
     cursor: pointer;
     justify-content: center;
     align-items: center;
+}
+.desktop-nav{
+display: none;
+}
+
+@media screen and (min-width: 700px) {  
+    *{
+        font-size: 1.3rem;
+    }
+    sections{
+        margin: 0 3rem;
+    }
+.best-seller {
+    max-width: 25%;
+}
+.about-image {
+    max-width: 100%;
+}
+.social-links p{
+    flex: 1;
+}
+.about{
+    display: flex;
+    align-items: center;
+  }
+    .about .image{
+      float: left;
+      margin: 2rem 1rem ;
+      max-width: 40%;
+    }
+    .about .text{
+      float: right;
+    }
+  
+    .about p h2 {
+      font-size: 20px;
+    }
+
+
+    .photo-gallery{
+        display: flex;
+        gap: 2%;
+        margin: 1rem 1rem;
+    }
+
+    .collumn{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .collumn img {
+        max-width: 85%;
+        border-radius: 5px;
+        object-fit: cover;
+    }
+
+    .topnav{
+        display: none;
+     }
+.Logo{
+    margin: 0.8rem;
+    margin-right: 70%;
+    max-width: 3rem;
+}
+     .desktop-nav{
+        background-color: #048eaa;
+        display: block;
+     }
+    nav ul{
+    float: right;
+    margin-right: 5rem;
+    }
+    nav ul li {
+        display: inline-block;
+        line-height: 80px;
+        margin: 0 1rem;
+
+    }
+    nav ul li a{
+        color: white;
+    }
 }
