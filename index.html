@@ -2,40 +2,54 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#048eaa">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<!-- Simulate a smartphone / tablet -->
+<div class="desktop-nav">
+  <nav>
+    <img src="Logo.png"class="Logo">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="creations.html">Creations</a></li>
+      <li><a href="store.html">Store</a></li>
+    </ul>
+  </nav>
+</div>
+  
+  
 <div class="mobile-container">
 
 <!-- Top Navigation Menu -->
 <div class="topnav">
-  <a href="index.html" class="active"><img src="Logo.png" class="Logo">   <p>Dale's Photo Creations</p></a>
+  <a href="index.html" class="active"><img src="Logo.png" class="Logo"><p>Dale's Photo Creations</p></a>
 
+  
   <div id="myLinks">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="creations.html">Creations</a>
     <a href="store.html">Store</a>
   </div>
-  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()"> <!-- Mobile menu -->
     <i class="fa fa-bars"></i>
   </a>
 </div>
 
 <section>
-  <h1>Best Seller | Young & Old Photos</h1>
-  <p>Young & Old Photos are photos combining the past and present versions of a person into one photo. They are
-    great gift ideas for birthdays and other significant milestones!</p>
-
-  <p>To make a young and old photo, <span>you will need</span></p>
-  <p>- A photo of the person from their past</p>
-  <p>- A photo of the person from the present day</p>
-
-  <p><span>NOTE</span> | It is prefered that both photos are of the best possible quality to produce the best final product</p>
+  <div class="best-seller-text">
+    <h1>Best Seller | Young & Old Photos</h1>
+    <p>Young & Old Photos are photos combining the past and present versions of a person into one photo. They are
+      great gift ideas for birthdays and other significant milestones!</p>
+  
+    <p>To make a young and old photo, <span>you will need</span></p>
+    <p>- A photo of the person from their past</p>
+    <p>- A photo of the person from the present day</p>
+  
+    <p><span>NOTE</span> | It is prefered that both photos are of the best possible quality to produce the best final product</p>
+  </div>
+ 
   <img src="Creative media/Y&O Mel.jpg" class="best-seller">
   <p>^Example^</p>
 </section>
@@ -92,10 +106,8 @@
   <a href="https://www.instagram.com/_dalesphotocreations_/"><img src="Instagram.png"></a>
   <a href="https://www.youtube.com/channel/UCsLWhkqD3dYz9_nwicqgL0Q"><img src="youtube.png"></a>
   <a href="mailto:dalesphotocreations@gmail.com"><img src="mail.png"></a>
-  <p style="text-align: center">  &copy; Dale's Photo Creations <script>document.write(new Date().getFullYear())</script>  </p>
+  <p style="text-align: center">  &copy; Dale's Photo Creations <script>document.write(new Date().getFullYear())</script></p> <!-- Copywrite & date -->
 </div>
-
-<!-- End smartphone / tablet look -->
 </div>
 
 <script>
