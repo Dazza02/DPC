@@ -165,7 +165,7 @@ img {
 display: none;
 }
 
-@media screen and (min-width: 700px) {  
+@media screen and (min-width: 700px) {  /* DESKTOP VEIW*/
     *{
         font-size: 1.3rem;
     }
@@ -243,3 +243,58 @@ display: none;
         color: white;
     }
 }
+
+@media screen and (min-device-width: 768px) /* IPAD VEIW*/
+    and (max-device-width: 1180PX) {
+        *{
+            font-size: 11px;
+        }
+        .topnav {
+            display: block;
+            overflow: hidden;
+            background-color: ##048eaa;
+            position: relative;
+          }
+          
+          .topnav #myLinks {
+            display: none;
+          }
+          
+          .topnav a {
+            color: white;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+            display: block;
+          }
+          
+          .topnav a.icon {
+            background: #048eaa;
+            display: block;
+            position: absolute;
+            right: 0;
+            top: 0;
+          }
+          
+          .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+          }
+          
+          .active {
+            background-color: #048eaa;
+            color: white;
+          }
+        
+        .Logo{
+            max-width: 2rem ;
+            height: auto;
+        }
+        .desktop-nav{
+            display: none;
+            }
+            .menu-icon {
+                display: block ;
+                }
+    }
+
