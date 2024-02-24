@@ -223,7 +223,7 @@ display: none;
 .Logo{
     margin: 0.8rem;
     display: flex;
-    align-items: left;
+    float: left;
     max-width: 3rem;
 }
      .desktop-nav{
@@ -242,6 +242,7 @@ display: none;
     }
     nav ul li a{
         color: white;
+        float: right;
     }
 }
 
@@ -298,4 +299,3 @@ display: none;
                 display: block ;
                 }
     }
-
