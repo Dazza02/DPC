@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="style.css">
-  <title>DPC | Home</title>
+<title>DPC | Home</title>
 </head>
 <body>
 <div class="desktop-nav">
@@ -37,7 +37,7 @@
     <i class="fa fa-bars"></i>
   </a>
 </div>
-
+<img src="Creative media/Desktop-Background.jpg">
 <section>
   <div class="best-seller-text">
     <h1>Best Seller | Young & Old Photos</h1>
@@ -65,41 +65,35 @@
 
   <div class="testimonials">
     <h1>Testimonials</h1>
+
+
+
+<div class="testimonial-slider">
+  <div class="slide">
+    <p><span>Jo</span> | I am more than happy with mine, can't believe I looked that good though! The concept is a great
+      gift idea for Christmas!</p>
   </div>
-
-<div class="testimonials">
-  <p><span>Jo</span> | I am more than happy with mine, can't believe I looked that good though! The concept is a great
-    gift idea for Christmas!</p>
+  <div class="slide">
+    <p><span>Lyn</span> | I am yet to use Dale's creations. I intend to use him with photos for my family history book
+      that I am writing. I am impressed with his work, especially on the child-to-adult photos he has done. Looking
+      forward to using your services Dale. Initial contact with you has been seamless.</p>
+  </div>
+  <div class="slide">
+    <p><span>Helen</span> | Fantastic work! I can highly recommend Dale for any photography creations.</p>
+  </div>
+  <div class="slide">
+    <p><span>Donna</span> | Love this young and old photo of my Dad that my cousin's son Dale created for Dad's 70th
+      Birthday. If your looking for photo creations like this then contact Dale's Photo Creations via Facebook. |
+      highly recommend his work, go check out his page!</p>  
+  </div>
+  <div class="slide">
+    <p><span>Sam</span> | If you’re thinking about a Christmas photo, but honestly, hit up Dale's Photo Creations for a
+      super easy and unique picture! Just send him your photo, whatever background your heart desires (or choose one
+      he already has) and taa-daa! Christmas magic</p>
+  </div>
+</div>
 </div>
 
-<div class="testimonials">
-  <p><span>Lyn</span> | I am yet to use Dale's creations. I intend to use him with photos for my family history book
-    that I am writing. I am impressed with his work, especially on the child-to-adult photos he has done. Looking
-    forward to using your services Dale. Initial contact with you has been seamless.</p>
-</div>
-
-<div class="testimonials">
-  <p><span>Helen</span> | Fantastic work! I can highly recommend Dale for any photography creations.</p>
-</div>
-
-<div class="testimonials">
-  <p><span>Donna</span> | Love this young and old photo of my Dad that my cousin's son Dale created for Dad's 70th
-    Birthday. If your looking for photo creations like this then contact Dale's Photo Creations via Facebook. |
-    highly recommend his work, go check out his page!</p>  
-</div>
-
-<div class="testimonials">
-  <p><span>Donna</span> | Love this young and old photo of my Dad that my cousin's son Dale created for Dad's 70th
-    Birthday. If your looking for photo creations like this then contact Dale's Photo Creations via Facebook. |
-    highly recommend his work, go check out his page!</p>
-</div>
-
-<div class="testimonials">
-  <p><span>Sam</span> | If you’re thinking about a Christmas photo, but honestly, hit up Dale's Photo Creations for a
-    super easy and unique picture! Just send him your photo, whatever background your heart desires (or choose one
-    he already has) and taa-daa! Christmas magic</p>
-</div>
-</section>
 
 <div class="social-links">
   <p> <SPAN>FOLLOW OUR SOCIALS!</SPAN></p>
@@ -111,7 +105,24 @@
 </div>
 </div>
 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
+  $(document).ready(function(){
+    var slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+      var slides = $(".testimonial-slider .slide");
+      for (var i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) {slideIndex = 1}    
+      slides[slideIndex-1].style.display = "block";  
+      setTimeout(showSlides, 8000); // Change slide every 5 seconds
+    }
+  });
+
 function myFunction() {
   var x = document.getElementById("myLinks");
   if (x.style.display === "block") {
