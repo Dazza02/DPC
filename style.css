@@ -168,7 +168,8 @@ img {
 display: none;
 }
 
-@media screen and (min-width: 700px) {  /* DESKTOP VEIW*/
+@media screen and (min-width: 1080px) {  /* DESKTOP VEIW*/
+    
     *{
         font-size: 1.3rem;
     }
@@ -249,8 +250,8 @@ display: none;
     }
 }
 
-@media screen and (min-device-width: 768px) /* IPAD VEIW*/
-    and (max-device-width: 1180PX) {
+@media screen and (max-device-width: 800px) /* IPAD VEIW*/
+ 
         *{
             font-size: 11px;
         }
@@ -274,7 +275,6 @@ display: none;
           }
           
           .topnav a.icon {
-            background: #048eaa;
             display: block;
             position: absolute;
             right: 0;
@@ -287,7 +287,6 @@ display: none;
           }
           
           .active {
-            background-color: #048eaa;
             color: white;
           }
         
