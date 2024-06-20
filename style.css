@@ -28,7 +28,6 @@
   }
   
   .topnav a.icon {
-    background: #048eaa;
     display: block;
     position: absolute;
     right: 0;
@@ -41,7 +40,6 @@
   }
   
   .active {
-    background-color: #048eaa;
     color: white;
   }
 
@@ -98,8 +96,6 @@ a {
     cursor: pointer;
 }
 
-
-
 a:hover {
     color: rgb(0, 255, 255)
 }
@@ -117,6 +113,8 @@ iframe {
     width: 30px;
     cursor: pointer;
 }
+
+
 
 img {
     max-width: 100%;
@@ -160,6 +158,11 @@ img {
     cursor: pointer;
     justify-content: center;
     align-items: center;
+
+}
+
+.social-links img :hover{
+    color: #048eaa;
 }
 .desktop-nav{
 display: none;
@@ -208,12 +211,12 @@ display: none;
     .collumn{
         display: flex;
         flex-direction: column;
-        gap: 20px;
+        gap: .5rem;
     }
 
     .collumn img {
-        max-width: 85%;
-        border-radius: 5px;
+        max-width: 96%;
+        border-radius: 1rem;
         object-fit: cover;
     }
 
@@ -227,7 +230,7 @@ display: none;
     max-width: 3rem;
 }
      .desktop-nav{
-        background-color: #048eaa;
+        background: ="Creative media/Desktop-Background.jpg">;
         display: flex;
      }
     nav ul{
@@ -300,304 +303,3 @@ display: none;
                 }
     }
 
-* {
-    font-family: Bradley Texting Pro;
-    font-size: 16px;
-    text-align: center;
-    align-items: center;
-    --primary-color: #1f1f1f;
-    --secondary-color: #fff;
-    margin: 0;
-    padding: 0;
-}
-
-.topnav {
-    overflow: hidden;
-    background-color: ##048eaa;
-    position: relative;
-  }
-  
-  .topnav #myLinks {
-    display: none;
-  }
-  
-  .topnav a {
-    color: white;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-    display: block;
-  }
-  
-  .topnav a.icon {
-    background: #048eaa;
-    display: block;
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  
-  .topnav a:hover {
-    background-color: #ddd;
-    color: black;
-  }
-  
-  .active {
-    background-color: #048eaa;
-    color: white;
-  }
-
-.Logo{
-    max-width: 2rem ;
-    height: auto;
-}
-h1 {
-    text-align: center;
-    font-weight: 500;
-    color: rgb(27, 177, 214);
-    padding-left: 8%;
-    padding-right: 8%;
-    padding-top: 3%;
-}
-
-h2 {
-    text-align: center;
-    font-weight: 500;
-    color: rgb(27, 177, 214);
-    padding-left: 8%;
-    padding-right: 8%;
-    padding-top: 3%;
-}
-
-p {
-    color: var(--secondary-color);
-    padding-left: 8%;
-    padding-right: 8%;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    margin: 0 1rem;
-}
-
-span {
-    color: rgb(27, 177, 214);
-    font-weight: 500;
-}
-
-section{
-    background-color: #0a303d;
-    margin: 0.5rem 1rem; 
-    border-radius: 1rem;
-}
-
-body {
-    transition: background-color 0.3s, color 0.3s;
-    background-color: var(--primary-color);
-}
-
-a {
-    color: var(--secondary-color);
-    text-decoration: none;
-    cursor: pointer;
-}
-
-
-
-a:hover {
-    color: rgb(0, 255, 255)
-}
-
-.menu-icon {
-display: block ;
-}
-
-iframe {
-    height: 100vh;
-    width: 100vw;
-}
-
-#icon {
-    width: 30px;
-    cursor: pointer;
-}
-
-img {
-    max-width: 100%;
-    height: 100%;
-}
-
-.best-seller {
-    max-width: 50%;
-    border-radius: 1rem;
-    margin: 0 1rem;
-    align-items: center;
-}
-
-.about-image{
-    border-radius: 1rem;
-    max-width: 50%;
-    margin: 1rem;
-}
-
-.container2 {
-    background-color: var(--primary-color);
-    object-position: center;
-    align-items: center;
-}
-
-.whatsnew {
-    background-color: rgba(10, 16, 56, 0.394);
-    border-radius: 1rem;
-}
-
-.testimonials{
-    background-color: rgba(46, 9, 106, 0.583);
-    background-blend-mode: hue;
-    margin: 1rem 2rem 0;
-    border-radius: 2rem;
-}
-
-.social-links img{
-    height: 1rem;
-    margin: 1rem 1rem;
-    cursor: pointer;
-    justify-content: center;
-    align-items: center;
-}
-.desktop-nav{
-display: none;
-}
-
-@media screen and (min-width: 700px) {  /* DESKTOP VEIW*/
-    *{
-        font-size: 1.3rem;
-    }
-    sections{
-        margin: 0 3rem;
-    }
-.best-seller {
-    max-width: 25%;
-}
-.about-image {
-    max-width: 100%;
-}
-.social-links p{
-    flex: 1;
-}
-.about{
-    display: flex;
-    align-items: center;
-  }
-    .about .image{
-      float: left;
-      margin: 2rem 1rem ;
-      max-width: 40%;
-    }
-    .about .text{
-      float: right;
-    }
-  
-    .about p h2 {
-      font-size: 20px;
-    }
-
-
-    .photo-gallery{
-        display: flex;
-        gap: 2%;
-        margin: 1rem 1rem;
-    }
-
-    .collumn{
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .collumn img {
-        max-width: 85%;
-        border-radius: 5px;
-        object-fit: cover;
-    }
-
-    .topnav{
-        display: none;
-     }
-.Logo{
-    margin: 0.8rem;
-    display: flex;
-    float: left;
-    max-width: 3rem;
-}
-     .desktop-nav{
-        background-color: #048eaa;
-        display: flex;
-     }
-    nav ul{
-    float: right;
-    margin-right: 5rem;
-    }
-    nav ul li {
-        display: inline-block;
-        line-height: 80px;
-        margin: 0 1rem;
-
-    }
-    nav ul li a{
-        color: white;
-        float: right;
-    }
-}
-
-@media screen and (min-device-width: 768px) /* IPAD VEIW*/
-    and (max-device-width: 1180PX) {
-        *{
-            font-size: 11px;
-        }
-        .topnav {
-            display: block;
-            overflow: hidden;
-            background-color: ##048eaa;
-            position: relative;
-          }
-          
-          .topnav #myLinks {
-            display: none;
-          }
-          
-          .topnav a {
-            color: white;
-            padding: 14px 16px;
-            text-decoration: none;
-            font-size: 17px;
-            display: block;
-          }
-          
-          .topnav a.icon {
-            background: #048eaa;
-            display: block;
-            position: absolute;
-            right: 0;
-            top: 0;
-          }
-          
-          .topnav a:hover {
-            background-color: #ddd;
-            color: black;
-          }
-          
-          .active {
-            background-color: #048eaa;
-            color: white;
-          }
-        
-        .Logo{
-            max-width: 2rem ;
-            height: auto;
-        }
-        .desktop-nav{
-            display: none;
-            }
-            .menu-icon {
-                display: block ;
-                }
-    }
