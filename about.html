@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/png" href="favicon.png">
+<title>DPC | About</title>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <a href="index.html"><img src="Logo.png" alt="logo"></a>
+        </div>
+        <ul id="menuList">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="creations.html">Creations</a></li>
+            <li><a href="store.html">Store</a></li>
+        </ul>
+        <div class="menu-icon">
+            <i class="fa-solid fa-bars" onclick="toggleMenu()"></i>
+        </div>
+    </nav>
+    
+    <section>
+        <div class="columns">
+            <div class="text">
+                <h1>About Me!</h1>
+            <p>Hi, Im Dale and I love using photoshop. Using your creative ideas and photos, combined with my knowledge of Adobe Photoshop, I can help you to make those ideas a reality.</p>
+            <p>Ive always had a creative side but I didnt always have something that allowed me to express my creativity. That is until I learned of Adobe Photoshop. The only problem was, that my family and friends, considered it too difficult and time-consuming to learn. However, I stuck with it and learnt all I could.</p>
+            <p>Now I want to use my years of learning and experience inside Adobe Photoshop to help you create memories and photos that you may have never thought possible.</p>
+                
+            <h1>My Why!</h1>
+            <p>From the moment I started learning Photoshop in 2016, I fell in love with it. It became my passion. I began learning it with passion. Soon after, my family caught on. They started asking me to touch up family photos and make unique birthday photo presents.</p>
+            <p>It was then that I understood that I had a passion for Photoshop. I wanted to share what I learnt with the world.​Once I knew that, I started Dales Photo Creations in 2020 to share my skills with the community to help them create photos that they never knew existed before.</p>
+    
+            </div>
+            <img src="Creative media/BEN 10.jpg" class="image">
+        </div>
+    </section>
+
+    <script>
+        let menuList = document.getElementById("menuList")
+        menuList.style.maxHeight = "0px";
+        function toggleMenu(){
+            if(menuList.style.maxHeight == "0px")
+            {menuList.style.maxHeight = "300px";}
+            else{menuList.style.maxHeight = "0px";}
+        }
+    </script>
+    <script src="https://kit.fontawesome.com/f8e1a90484.js" crossorigin="anonymous"></script>
+</body>
+</html>

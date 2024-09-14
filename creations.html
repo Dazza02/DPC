@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/png" href="favicon.png">
+<title>DPC | Creations</title>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <a href="index.html"><img src="Logo.png" alt="logo"></a>
+        </div>
+        <ul id="menuList">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="creations.html">Creations</a></li>
+            <li><a href="store.html">Store</a></li>
+        </ul>
+        <div class="menu-icon">
+            <i class="fa-solid fa-bars" onclick="toggleMenu()"></i>
+        </div>
+    </nav>
+
+    <div class="gallery">
+        <img src="Creative media/Y&O Opa.jpg">
+        <img src="Creative media/Y&O Oma.jpg">
+        <img src="Creative media/Y&O Nan.jpg">
+        <img src="Creative media/Y&O Mum.jpg">
+        <img src="Creative media/Y&O Mel.jpg">
+        <img src="Creative media/Y&O me.jpg">
+        <img src="Creative media/Y&O Mat.jpg">
+        <img src="Creative media/Y&O Liam.jpg">
+        <img src="Creative media/Y&O Rebekah.jpg">
+        <img src="Creative media/Y&O Helen.jpg">
+        <img src="Creative media/Y&O Grandad.jpg">
+        <img src="Creative media/Y&O Emeil.jpg">
+        <img src="Creative media/Y&O Dennis.jpg">
+        <img src="Creative media/Y&O Dad.jpg">
+        <img src="Creative media/Wilson Y&O2.jpg">
+        <img src="Creative media/Y&OFrits generations.jpg">
+        <img src="Creative media/Wendy's Photo combined.jpg">
+        <img src="Creative media/Wedding aniversery photo.jpg">
+        <img src="Creative media/Hogwarts inserted.jpg">
+        <img src="Creative media/Water ball.jpg">
+        <img src="Creative media/Tribute 2.jpg">
+        <img src="Creative media/Tribute 1.jpg">
+        <img src="Creative media/The Hot head jpg.jpg">
+        <img src="Creative media/Star wars scene.jpg">
+        <img src="Creative media/Snow frame.jpg">
+        <img src="Creative media/Ship-wreck.jpg">
+        <img src="Creative media/Rapid fire ad.jpg">
+        <img src="Creative media/phone watwerfal.jpg">
+        <img src="Creative media/OLD logo.jpg">
+        <img src="Creative media/Mums Birthday 2023.jpg">
+        <img src="Creative media/Mothers day 2023.jpg">
+        <img src="Creative media/Mothers day 2019.jpg">
+        <img src="Creative media/Real Alien drawing.jpeg">
+        <img src="Creative media/Monster Re-drawn.jpg">
+        <img src="Creative media/Mimic Re-drawn.jpg">
+        <img src="Creative media/Dragon Re-drawn.jpg">
+        <img src="Creative media/Demon Re-drawn.jpg">
+        <img src="Creative media/Displacer beast Re-drawn.jpg">
+        <img src="Creative media/Market photos STORKEN.jpg">
+        <img src="Creative media/Market photos SAM.jpg">
+        <img src="Creative media/Market photos 7.jpg">
+        <img src="Creative media/Market photos 03 .jpg">
+        <img src="Creative media/Market photos 02 .jpg">
+        <img src="Creative media/Logo re-design ZOOSH.jpg">
+        <img src="Creative media/light.jpg">
+        <img src="Creative media/Kerry Photo correction comparison.jpg">
+        <img src="Creative media/Jay pasta.jpg">
+        <img src="Creative media/jay disolving.jpg">
+        <img src="Creative media/Helens photo 2.jpg">
+        <img src="Creative media/Helen's Photo 5x7.jpg">
+        <img src="Creative media/Group additions.jpg">
+        <img src="Creative media/Grifin.jpg">
+        <img src="Creative media/Generational comparison poster.jpg">
+        <img src="Creative media/Frost hands.jpg">
+        <img src="Creative media/Floating House.jpg">  
+        <img src="Creative media/fish bulb.jpg">
+        <img src="Creative media/Dr Strange Poster.jpg">
+        <img src="Creative media/Dog Drawing.jpg">
+        <img src="Creative media/Digital Drawing 3.jpg">
+        <img src="Creative media/Digital Drawing 2.jpg">
+        <img src="Creative media/Digital Drawing 1.jpg">
+        <img src="Creative media/Desktop background.jpg">
+        <img src="Creative media/desktop Background(1).jpg">
+        <img src="Creative media/Desktop Background copy.jpg">
+        <img src="Creative media/Dale with Lightsaber.jpg">
+        <img src="Creative media/Dale at Hogwarts express.jpg">
+        <img src="Creative media/Dale As Spider-man.jpg">
+        <img src="Creative media/BEN 10.jpg">
+        <img src="Creative media/Cover Art.jpg">
+        <img src="Creative media/colorised photo NAN.jpg">
+        <img src="Creative media/colorised photo Grandad.jpg">
+        <img src="Creative media/Coloring page.jpg">
+        <img src="Creative media/Color match.gif">
+        <img src="Creative media/Coke can.jpg">
+        <img src="Creative media/Coco phone hologram.jpg">
+        <img src="Creative media/Cardboard bed advert.jpg">
+        <img src="Creative media/Coco frame.jpg">
+        <img src="Creative media/Book cover mockup.jpg">
+        <img src="Creative media/Apple painting .jpg">
+      </div>
+    </div>
+</div>
+<button onclick="topFunction()" id="myBtn" title="Go to top">^</button>
+
+<script>
+// Get the button
+let mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
+    <script>
+        let menuList = document.getElementById("menuList")
+        menuList.style.maxHeight = "0px";
+        function toggleMenu(){
+            if(menuList.style.maxHeight == "0px")
+            {menuList.style.maxHeight = "300px";}
+            else{menuList.style.maxHeight = "0px";}
+        }
+    </script>
+    <script src="https://kit.fontawesome.com/f8e1a90484.js" crossorigin="anonymous"></script>
+</body>
+</html>
