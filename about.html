@@ -2,100 +2,52 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/png" href="favicon.png">
 <title>DPC | About</title>
 </head>
-<body background="Creative media/nebula.jpg">
-
-  <div class="desktop-nav">
+<body>
     <nav>
-      <img src="Logo.png"class="Logo">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="test.html">Creations</a></li>
-        <li><a href="store.html">Store</a></li>
-      </ul>
+        <div class="logo">
+            <a href="index.html"><img src="Logo.png" alt="logo"></a>
+        </div>
+        <ul id="menuList">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="creations.html">Creations</a></li>
+            <li><a href="store.html">Store</a></li>
+        </ul>
+        <div class="menu-icon">
+            <i class="fa-solid fa-bars" onclick="toggleMenu()"></i>
+        </div>
     </nav>
-  </div>
-    
-
-<div class="mobile-container">
-
-<!-- Top Navigation Menu -->
-<div class="topnav">
-  <a href="index.html" class="active"><img src="Logo.png" class="Logo"></a>
-  <div id="myLinks">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="test.html">Creations</a>
-    <a href="store.html">Store</a>
-  </div>
-  <a href="javascript:void(0);" class="icon" onclick="myFunction()"><!-- Mobile menu -->
-    <i class="fa fa-bars"></i>
-  </a>
-</div>
-
-<div class="about">
-  <div class="text">
-    <section>
-      <h2>About Me!</h2>
-      <p>Hi, Im Dale and I love using photoshop. Using your creative ideas and photos, combined with my
-        knowledge of Adobe Photoshop, I can help you to make those ideas a reality.
-      <p>
-        Ive always had a creative side but I didnt always have something that allowed me to express my
-        creativity. That is until I learned of Adobe Photoshop. The only problem was, that my family and
-        friends, considered it too difficult and time-consuming to learn. However, I stuck with it and
-        learnt all I could.</p>
-    
-      <p>Now I want to use my years of learning and experience inside Adobe Photoshop to help you create
-        memories and photos that you may have never thought possible.</p>
-    </section>
     
     <section>
-      <h2>My Why!</h2>
+        <div class="columns">
+            <div class="text">
+                <h1>About Me!</h1>
+            <p>Hi, Im Dale and I love using photoshop. Using your creative ideas and photos, combined with my knowledge of Adobe Photoshop, I can help you to make those ideas a reality.</p>
+            <p>Ive always had a creative side but I didnt always have something that allowed me to express my creativity. That is until I learned of Adobe Photoshop. The only problem was, that my family and friends, considered it too difficult and time-consuming to learn. However, I stuck with it and learnt all I could.</p>
+            <p>Now I want to use my years of learning and experience inside Adobe Photoshop to help you create memories and photos that you may have never thought possible.</p>
+                
+            <h1>My Why!</h1>
+            <p>From the moment I started learning Photoshop in 2016, I fell in love with it. It became my passion. I began learning it with passion. Soon after, my family caught on. They started asking me to touch up family photos and make unique birthday photo presents.</p>
+            <p>It was then that I understood that I had a passion for Photoshop. I wanted to share what I learnt with the world.​Once I knew that, I started Dales Photo Creations in 2020 to share my skills with the community to help them create photos that they never knew existed before.</p>
     
-      <p>From the moment I started learning Photoshop in 2016, I fell in love with it. It became my passion. I
-        began learning it with passion. Soon after, my family caught on. They started asking me to touch up
-        family photos and make unique birthday photo presents.</p>
-    
-      <p>It was then that I understood that I had a passion for Photoshop. I wanted to share what I learnt
-        with the world.
-    
-        ​Once I knew that, I started Dales Photo Creations in 2020 to share my skills with the community to
-        help them create photos that they never knew existed before.</p>
+            </div>
+            <img src="Creative media/BEN 10.jpg" class="image">
+        </div>
     </section>
-  </div>
 
-  <div class="image">
-    <img src="Profile Pic copy.png" class="about-image">
-
-  </div>
-
-</div>
-
-	<div class="social-links">
-		<p> <SPAN>FOLLOW OUR SOCIALS!</SPAN></p>
-		<a href="https://www.facebook.com/Dalesphotocreations/"><img src="Facebook.png"></a>
-		<a href="https://www.instagram.com/_dalesphotocreations_/"><img src="Instagram.png"></a>
-		<a href="https://www.youtube.com/channel/UCsLWhkqD3dYz9_nwicqgL0Q"><img src="youtube.png"></a>
-		<a href="mailto:dalesphotocreations@gmail.com"><img src="mail.png"></a>
-    <p style="text-align: center">  &copy; Dale's Photo Creations <script>document.write(new Date().getFullYear())</script></p> <!-- Copywrite & date -->
-  </div>
-<!-- End smartphone / tablet look -->
-</div>
-
-<script>
-function myFunction() {
-  var x = document.getElementById("myLinks");
-  if (x.style.display === "block") {
-    x.style.display = "none";
-  } else {
-    x.style.display = "block";
-  }
-}
-</script>
-
+    <script>
+        let menuList = document.getElementById("menuList")
+        menuList.style.maxHeight = "0px";
+        function toggleMenu(){
+            if(menuList.style.maxHeight == "0px")
+            {menuList.style.maxHeight = "300px";}
+            else{menuList.style.maxHeight = "0px";}
+        }
+    </script>
+    <script src="https://kit.fontawesome.com/f8e1a90484.js" crossorigin="anonymous"></script>
 </body>
 </html>
