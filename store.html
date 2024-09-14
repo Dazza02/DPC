@@ -2,70 +2,35 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/png" href="favicon.png">
+<link rel="icon" type="image/png" href="favicon.png">
 <title>DPC | Store</title>
-
-
 </head>
-<body background="Creative media/nebula.jpg">
-
-  <div class="desktop-nav">
+<body>
     <nav>
-      <img src="Logo.png"class="Logo" >
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="test.html">Creations</a></li>
-        <li><a href="store.html">Store</a></li>
-      </ul>
+        <div class="logo">
+            <a href="index.html"><img src="Logo.png" alt="logo"></a>
+        </div>
+        <ul id="menuList">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="creations.html">Creations</a></li>
+            <li><a href="store.html">Store</a></li>
+        </ul>
+        <div class="menu-icon">
+            <i class="fa-solid fa-bars" onclick="toggleMenu()"></i>
+        </div>
     </nav>
-  </div>
-    
-
-<!-- Simulate a smartphone / tablet -->
-<div class="mobile-container">
-
-<!-- Top Navigation Menu -->
-<div class="topnav">
-  <a href="index.html" class="active"><img src="Logo.png" class="Logo"></a>
-  <div id="myLinks">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="test.html">Creations</a>
-    <a href="store.html">Store</a>
-  </div>
-  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-    <i class="fa fa-bars"></i>
-  </a>
-</div>
-
-<iframe src="https://dales-photo-creations.square.site/" width=100vd; height=100vh; frameborder="0"></iframe>
-
-<div class="social-links">
-  <p> <SPAN>FOLLOW OUR SOCIALS!</SPAN></p>
-  <a href="https://www.facebook.com/Dalesphotocreations/"><img src="Facebook.png"></a>
-  <a href="https://www.instagram.com/_dalesphotocreations_/"><img src="Instagram.png"></a>
-  <a href="https://www.youtube.com/channel/UCsLWhkqD3dYz9_nwicqgL0Q"><img src="youtube.png"></a>
-  <a href="mailto:dalesphotocreations@gmail.com"><img src="mail.png"></a>
-  <p style="text-align: center">  &copy; Dale's Photo Creations <script>document.write(new Date().getFullYear())</script>  </p>
-
-</div>
-
-<!-- End smartphone / tablet look -->
-</div>
-
-<script>
-function myFunction() {
-  var x = document.getElementById("myLinks");
-  if (x.style.display === "block") {
-    x.style.display = "none";
-  } else {
-    x.style.display = "block";
-  }
-}
-</script>
-
+        <iframe src="https://dales-photo-creations.square.site/" width=100vd; height=100vh; frameborder="0"></iframe>
+    <script>
+        let menuList = document.getElementById("menuList")
+        menuList.style.maxHeight = "0px";
+        function toggleMenu(){
+            if(menuList.style.maxHeight == "0px")
+            {menuList.style.maxHeight = "300px";}
+            else{menuList.style.maxHeight = "0px";}
+        }
+    </script>
+    <script src="https://kit.fontawesome.com/f8e1a90484.js" crossorigin="anonymous"></script>
 </body>
 </html>
