@@ -205,21 +205,15 @@ display: none;
 
 
     .photo-gallery{
-        display: flex;
-        gap: 2%;
-        margin: 1rem 1rem;
+ columns: 400px;
     }
 
-    .collumn{
-        display: flex;
-        flex-direction: column;
-        gap: .5rem;
-    }
-
-    .collumn img {
-        max-width: 96%;
-        border-radius: 1rem;
-        object-fit: cover;
+    .photo-gallery img{
+      width: 100%;
+      padding: 5px;
+      align-items: center;
+      justify-content: center;
+      
     }
 
     .topnav{
