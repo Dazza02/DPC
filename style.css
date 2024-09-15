@@ -164,23 +164,27 @@ nav ul li a:hover {
     flex: 1;
     background-color: rgb(24, 52, 63);
     border-radius: 2rem;
+    overflow: hidden;
 }
 
 .content {
     align-items: center;
     flex: 1;
     flex-wrap: wrap;
+    overflow: hidden;
 }
 
 .testimonials {
     display: flex;
     background-color: rgb(24, 52, 63);
     border-radius: 2rem;
+    overflow: hidden;
 }
 .card{
 align-items: center;
 flex: 1;
 flex-wrap: wrap;
+overflow: hidden;
 }
 
 
