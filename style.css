@@ -289,9 +289,9 @@ iframe {
     #menuList {
         transition: all 0.5s;
 }
-    img{
-     display: flex;
-     flex-wrap: wrap;
+ img,.image,.A-image,{
+     display: inline-flex;
+     text-align: center;
      justify-content: center;
      align-items: center;
      max-width: 80%;
