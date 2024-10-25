@@ -17,6 +17,7 @@ html,body {
     width: 100%;
     width: 100%;
     background:var(--background-color);
+    scroll-behavior: smooth;
 }
 
 /* ----------------Defults---------------------- */
@@ -39,6 +40,7 @@ button:hover{
     color: black;
     transform: scale(1.1);
     box-shadow: 0 0 30px rgb(10, 153, 219);
+    outline: none;
 }
 
 h1,h2 {
@@ -65,6 +67,9 @@ img{
     max-width: 100%;
     max-height: 100%;
     display: block;
+    justify-content: center;
+    align-items: center;
+
 }
 
 section{
@@ -77,6 +82,7 @@ section{
     justify-content: space-between;
     align-items: center;
     padding: 20px;
+
 }
 
 .text {
@@ -89,6 +95,8 @@ section{
     flex: 1;
     min-width: 300px;
     border-radius: 2rem;
+    justify-content: center;
+    align-items: center;
 }
 
 .image img {
@@ -165,46 +173,35 @@ nav ul li a:hover {
     font-size: 2em;
 }
 
-.services {
-    display: flex;
-    flex-shrink: 1;
-    flex: 1;
-    border-radius: 2rem;
-    overflow:auto;
-}
-
 .content {
     align-items: center;
     flex: 1;
     flex-wrap: wrap;
     overflow: hidden;
 }
-
-.testimonials{
-    display: flex;
-    flex-shrink: 1;
-    flex: 1;
-    border-radius: 2rem;
-    overflow:auto;
+.services{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2%;
+    padding: 5%;
+    justify-content: center;
+    overflow-y: auto;
 }
 
-/* Float four columns side by side */
-.column {
-columns: 400px;
-flex-shrink: 1;
-flex-grow: 1;
-float: right;
-width: 100%;
-    padding: 0 10px;
-    overflow: hidden;
-    flex-wrap: wrap;
-  }
-  
-  /* Remove extra left and right margins, due to padding */
-  .row {margin: 0 -5px;}
+.testimonials{
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+gap: 2%;
+padding: 5%;
+justify-content: center;
+}
+
+
     
   /* Style the counter cards */
   .card {
+    width: 100%;
+    gap: 5%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     padding: 16px;
     text-align: center;
@@ -226,8 +223,8 @@ iframe {
     box-shadow: 0 0 40px rgb(10, 219, 45);
     border-radius: 2rem;
 }
-/* ----------------Creations---------------------- */
 
+/* ----------------Creations---------------------- */
 .back-to-top {
     position: fixed;
     bottom: 2rem;
@@ -246,6 +243,9 @@ iframe {
     transform: scale(1.1);
     box-shadow: 0 0 30px rgb(10, 153, 219);
 }
+
+
+
 
     .gallery{
  columns: 400px;
@@ -283,7 +283,7 @@ iframe {
     #menuList {
         transition: all 0.5s;
 }
- img,.image,.A-image,{
+    img,.image,.A-image,{
      display: inline-flex;
      text-align: center;
      justify-content: center;
