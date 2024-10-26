@@ -6,7 +6,8 @@
     list-style-type: none;
     text-decoration: none;
     user-select: none;
-    scroll-behavior: smooth;
+   scroll-behavior: smooth;
+    text-align: center;
 }
 :root{
     --background-color: #222222;
