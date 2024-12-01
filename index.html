@@ -4,14 +4,15 @@
     <meta content='#74C0FC' name='theme-color'/> 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fon-awesome/4.7.0/css/font-awesome.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
     <link rel="icon" type="image/png" href="favicon.png">
     <title>DPC | Home</title>
     </head>
     <body>
         <nav>
         <div class="logo">
-        <a href="index.html"><img src="Logo.png" alt="logo" onclick="toggleMenu()"</a>
+        <a href="index.html"><p>Dale's Photo Creations</p></a>
         </div>
         <ul id="menuList">
         <li><a href="index.html">Home</a></div></li>
@@ -20,21 +21,21 @@
         <li><a href="store.html">Store</a></li>
         </ul>
         <div class="menu-icon">
-        <i class="fa-solid fa-bars" onclick="toggleMenu()"></i>
+        <i class='bx bx-menu'onclick="togglemenu()"></i>
         </div>
         </nav>
 
-        <section>
+        <section class="home">
             <div class="columns">
                 <div class="text">
-                    <h2>Dale's Photo Creations</h2>
+                    <h2>Making Your Photo Dreams A Reality!</h2>
                     <p> Welcome to <span>Dales Photo Creations!</span> A place where I stretch the bounds of posibility with Photoshop magic. Fixing your damaged photos, adding people into photos, nothing is Impossible!</p>
                     <P> While your here, have a look at some of my previous works in the creations page </P>
-<a class="cta" href="creations.html">Creations</a>                   
+                    <a class="cta" href="creations.html">Creations</a>                   
                     <div class="socials">
-                    <a href="https://www.facebook.com/Dalesphotocreations/"><i class="fa-brands fa-facebook" style="color: #74C0FC;"></i></a>
-                    <a href="https://www.instagram.com/_dalesphotocreations_/"><i class="fa-brands fa-instagram" style="color: #74C0FC;"></i></a>
-                    <a href="https://www.youtube.com/channel/UCsLWhkqD3dYz9_nwicqgL0Q"><i class="fa-brands fa-youtube" style="color: #74C0FC;"></i></a>
+                   <a href="https://www.facebook.com/Dalesphotocreations/"><i class='bx bxl-facebook'></i></a> 
+                   <a href="https://www.instagram.com/_dalesphotocreations_"><i class='bx bxl-instagram'></i></a> 
+                   <a href="https://www.youtube.com/channel/UCsLWhkqD3dYz9_nwicqgL0Q"><i class='bx bxl-youtube'></i></a> 
                     </div> 
             </div>
             <div class="image">
@@ -43,7 +44,7 @@
             </section>
             
             <h1>Services</h1>
-        <section  class="services">
+        <section class="services">
                     <div class="card">
                         <img src="Creative media/Y&O me.jpg">
                         <p><span>Young & Old photos</span><br> are photos combining the past and present versions of a person into one photo. They are great gift ideas for birthdays and significant milestones!</p>
@@ -124,13 +125,23 @@
     </div>
         </section>
 
-    <script>
-    let menuList = document.getElementById("menuList")
-    menuList.style.maxHeight = "0px";
-    function toggleMenu() {
-    if (menuList.style.maxHeight == "0px") { menuList.style.maxHeight = "300px"; }
-    else { menuList.style.maxHeight = "0px"; }}
-    </script>
-    <script src="https://kit.fontawesome.com/f8e1a90484.js" crossorigin="anonymous"></script>
-    </body>
-    </html>
+        <script>
+            var menuList = document.getElementById("menuList");
+
+            menuList.style.maxHeight = "0px";
+
+            function togglemenu() {
+
+            if (menuList.style.maxHeight == "0px") 
+        {
+            menuList.style.maxHeight = "130px"; 
+        }
+            else 
+        {
+           menuList.style.maxHeight = "0px"; 
+        }
+    }
+            </script>
+ <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+</body>
+            </html>
