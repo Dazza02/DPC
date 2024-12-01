@@ -2,6 +2,7 @@
 <html>
 <head>
 <meta content='#74C0FC' name='theme-color'/> 
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="style.css">
 <link rel="icon" type="image/png" href="favicon.png">
@@ -19,9 +20,9 @@
             <li><a href="store.html">Store</a></li>
         </ul>
         <div class="menu-icon">
-            <i class="fa-solid fa-bars" onclick="toggleMenu()"></i>
-        </div>
-    </nav>
+            <i class='bx bx-menu'onclick="togglemenu()"></i>
+            </div>
+            </nav>
 
     <div class="gallery">
         <img src="Creative media/Y&O Opa.jpg">
@@ -107,17 +108,24 @@
     </div>
 </div>
 <a href="#" class="back-to-top">
-  <i class="fa-solid fa-angle-up"></i>
-</a>
-    <script>
-        let menuList = document.getElementById("menuList")
-        menuList.style.maxHeight = "0px";
-        function toggleMenu(){
-            if(menuList.style.maxHeight == "0px")
-            {menuList.style.maxHeight = "300px";}
-            else{menuList.style.maxHeight = "0px";}
-        }
+<i class='bx bx-chevron-up'></i></a>
+<script>
+    var menuList = document.getElementById("menuList");
+
+    menuList.style.maxHeight = "0px";
+
+    function togglemenu() {
+
+    if (menuList.style.maxHeight == "0px") 
+{
+    menuList.style.maxHeight = "130px"; 
+}
+    else 
+{
+   menuList.style.maxHeight = "0px"; 
+}
+}
     </script>
-    <script src="https://kit.fontawesome.com/f8e1a90484.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 </body>
-</html>
+    </html>
