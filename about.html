@@ -4,6 +4,7 @@
 <meta content='#74C0FC' name='theme-color'/> 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="style.css">
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 <link rel="icon" type="image/png" href="favicon.png">
 <title>DPC | About</title>
 </head>
@@ -19,11 +20,12 @@
             <li><a href="store.html">Store</a></li>
         </ul>
         <div class="menu-icon">
-            <i class="fa-solid fa-bars" onclick="toggleMenu()"></i>
-        </div>
-    </nav>
+            <i class='bx bx-menu'onclick="togglemenu()"></i>
+            </div>
+            </nav>
     
-    <section>
+    
+    <section class="about">
         <div class="columns">
             <div class="text">
                 <h1>About Me!</h1>
@@ -36,19 +38,27 @@
             <p>It was then that I understood that I had a passion for Photoshop. I wanted to share what I learnt with the world.​Once I knew that, I started Dales Photo Creations in 2020 to share my skills with the community to help them create photos that they never knew existed before.</p>
     
             </div>
-            <img src="Creative media/BEN 10.jpg" class="image">
+            <img src="Creative media/BEN 10.jpg">
         </div>
     </section>
 
     <script>
-        let menuList = document.getElementById("menuList")
+        var menuList = document.getElementById("menuList");
+
         menuList.style.maxHeight = "0px";
-        function toggleMenu(){
-            if(menuList.style.maxHeight == "0px")
-            {menuList.style.maxHeight = "300px";}
-            else{menuList.style.maxHeight = "0px";}
-        }
-    </script>
-    <script src="https://kit.fontawesome.com/f8e1a90484.js" crossorigin="anonymous"></script>
+
+        function togglemenu() {
+
+        if (menuList.style.maxHeight == "0px") 
+    {
+        menuList.style.maxHeight = "130px"; 
+    }
+        else 
+    {
+       menuList.style.maxHeight = "0px"; 
+    }
+}
+        </script>
+<script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 </body>
-</html>
+        </html>
