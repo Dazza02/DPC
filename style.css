@@ -129,6 +129,7 @@ img :hover{
     transform: scale(1.1);
 }
 .footer {
+    margin: auto;
     overflow: none;
     justify-content: space-evenly;
     display: flex;
