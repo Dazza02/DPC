@@ -128,7 +128,16 @@ section{
 img :hover{
     transform: scale(1.1);
 }
-
+.footer {
+    overflow: none;
+    justify-content: space-evenly;
+    display: flex;
+    background-color: #353434;
+    line-height: normal;
+    text-align: center;
+    padding: 2rem;
+    width: 100%;
+}
 /* ----------------Navigation---------------------- */
 
 nav {
