@@ -129,7 +129,7 @@ img :hover{
     transform: scale(1.1);
 }
 .footer {
-    margin: auto;
+padding-top: 2em;
     overflow: none;
     justify-content: space-evenly;
     display: flex;
