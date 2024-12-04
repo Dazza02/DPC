@@ -284,18 +284,6 @@ nav ul li a:hover  {
     line-height: 1.5;
   }
   
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .card {
-      flex: 1 1 calc(50% - 20px); /* Two cards per row */
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .card {
-      flex: 1 1 100%; /* One card per row */
-    }
-  }
 /* ----------------Store---------------------- */
 
 iframe {
@@ -413,4 +401,7 @@ section{
         max-width: 70%;
         align-items: center;
     }
+    .card {
+        flex: 1 1 calc(50% - 20px); /* Two cards per row */
+      }
   }
