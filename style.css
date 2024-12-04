@@ -245,7 +245,6 @@ gap: 2%;
 padding: 5%;
 justify-content: center;
     padding-bottom: 2rem;
-        overflow-y: auto;
 
 }
 
@@ -253,7 +252,7 @@ justify-content: center;
     
   /* Style the counter cards */
   .card {
-    width: 100%;
+    width: fit-content;
     gap: 5%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     padding: 16px;
