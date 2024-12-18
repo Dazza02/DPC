@@ -377,10 +377,12 @@ iframe {
      max-width: 80%;
      width: auto;
 }
-.card{
+.card  .footer p{
     width: 100%;
     height: auto;
+    flex: 1;
 }
+
 }
     .column {
     width: 100%;
