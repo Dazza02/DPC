@@ -381,7 +381,6 @@ iframe {
     width: 100%;
     height: auto;
     flex: 1;
-}
 
 }
     .column {
@@ -402,3 +401,7 @@ iframe {
         display: flex;
     }
       }
+      
+
+    
+  }
