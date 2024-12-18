@@ -377,7 +377,11 @@ iframe {
      max-width: 80%;
      width: auto;
 }
-
+.card{
+    width: 100%;
+    height: auto;
+}
+}
     .column {
     width: 100%;
     margin-bottom: 20px;
@@ -392,9 +396,7 @@ iframe {
         max-width: 70%;
         align-items: center;
     }
-   
-.card{
-    width: 100%;
-    height: auto;
-}
-  }
+    section .services .testimonials{
+        display: flex;
+    }
+      }
