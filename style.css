@@ -377,10 +377,7 @@ iframe {
      max-width: 80%;
      width: auto;
 }
-section{
-    display: flex;
-    flex-direction: column;
-}
+
     .column {
     width: 100%;
     margin-bottom: 20px;
