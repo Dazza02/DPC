@@ -100,7 +100,6 @@ p {
 img{
     max-width: 100%;
     max-height: 100%;
-    display: block;
     justify-content: center;
     align-items: center;
         border-radius: 1rem;
@@ -115,28 +114,18 @@ section{
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    
 
 }
 
 .text {
     flex: 1;
-    min-width: 300px;
+    min-width: 50%;
     padding: 0 1rem;
+    text-align: center;
 }
 
-.image {
-    flex: 1;
-    min-width: 300px;
-    border-radius: 2rem;
-    justify-content: center;
-    align-items: center;
-}
 
-.image img {
-    width: 100%;
-    height: auto;
-}
 
 img :hover{
     transform: scale(1.1);
@@ -407,14 +396,7 @@ iframe {
 
     }
     
-    img,.image,.A-image {
-     display: inline-flex;
-     text-align: center;
-     justify-content: center;
-     align-items: center;
-     max-width: 80%;
-     width: auto;
-}
+
 .card {
     width: 100%;
     height: auto;
@@ -428,7 +410,8 @@ iframe {
 }
     .column {
     width: 100%;
-    margin-bottom: 20px;
+    text-align: center;
+    
       display: block;
       overflow: hidden;
     }
@@ -437,14 +420,14 @@ iframe {
         transition: .5s;
     }
     .about img{
-        max-width: 70%;
+        max-width: 100%;
         align-items: center;
     }
     section .services .testimonials{
         display: flex;
     }
+    .text .text p {
+        max-width: 100%;
+        align-items: center;
+    }
       }
-      
-
-    
-  }
