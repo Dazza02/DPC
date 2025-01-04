@@ -143,6 +143,7 @@ img :hover{
 
 .footer p{
     color: var(--text-color);
+    
 }
 
 
@@ -252,11 +253,15 @@ nav ul li a:hover  {
     border: 2px solid var(--accent-color);
     border-radius: 40px;
     box-shadow: 0 0 10px var(--accent-color);
-    font-size: 1.5em;
+    font-size: 1rem;
     color: var(--background-color);
     font-weight: 600;
     margin-bottom: 1rem;
     text-align: center;
+  }
+  .best-seller img{
+    align-items: center;
+    justify-content: center;
   }
   
   .testimonials{
@@ -431,3 +436,4 @@ iframe {
         align-items: center;
     }
       }
+
