@@ -268,7 +268,7 @@ nav ul li a:hover  {
     gap: 1rem;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     justify-content: center;
-    background: linear-gradient(to bottom, var(--background-color), #66ff91, #3d3d3d);
+    background: linear-gradient(to bottom, var(--background-color), #66ff91, var(--card-color));
   }
   
   .card {
