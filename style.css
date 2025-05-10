@@ -78,7 +78,7 @@ button:hover{
 
 h1,h2 {
     color: var(--accent-color);
-    font-size: 2rem;
+    font-size: clamp (1.8rem, 10vw, 5rem);
     margin: 1rem;
     text-align: center;
 
@@ -103,6 +103,7 @@ img{
     justify-content: center;
     align-items: center;
         border-radius: 1rem;
+        place-items: center;
 }
 
 section{
@@ -128,7 +129,7 @@ section{
 
 
 img :hover{
-    transform: scale(1.1);
+    transform: scale(2);
 }
 .footer {
     overflow: none;
@@ -139,12 +140,9 @@ img :hover{
     text-align: center;
     padding: 2rem;
     width: 100%;
+    color: var(--text-color);
 }
 
-.footer p{
-    color: var(--text-color);
-    
-}
 
 
 /* ----------------Navigation---------------------- */
@@ -217,6 +215,8 @@ nav ul li a:hover  {
 
 /* ----------------Home---------------------- */
 
+
+
 .home-image{
     position: absolute;
     margin-top: 5rem;
@@ -232,19 +232,19 @@ nav ul li a:hover  {
     font-size: 2em;
 }
 
-.content {
-    align-items: center;
-    flex: 1;
-    flex-wrap: wrap;
-    overflow: hidden;
-}
+.best-seller{
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
+    justify-content: center;
+  }
 
 .services{
-    display: flex;
-    gap: 1em;
-    overflow: scroll;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    justify-content: center;
+    background: linear-gradient(to bottom, #222222, #1b8de5, #222222);
   }
 
   #best-seller-tag{
@@ -260,37 +260,32 @@ nav ul li a:hover  {
     text-align: center;
   }
   .best-seller img{
-    align-items: center;
-    justify-content: center;
+ 
   }
   
   .testimonials{
-    display: flex;
-    gap: 1em;
-    overflow: scroll;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    justify-content: center;
+    background: linear-gradient(to bottom, #222222, #66ff91, #3d3d3d);
   }
   
   .card {
-    color: var(--text-color);
-    align-items: center;
-    scroll-snap-align: start;
-    flex-shrink: 0;
-    width: 600px;
-    height: auto s;
-    aspect-ratio: 3/2;
-    background-color: var(--card-color);
-    border: 1px solid var(--accent-color);
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s;
-    text-align: right;
+   background-color: var(--card-color);
+   place-content: center;
+   border-radius: 1rem;
+  }
+
+  .card img{
+    place-items: center;
+    width: 70%;
+    height: auto;
+    margin-top: 1rem;
   }
 
   .card p{
+    padding: fit-content;
     color: var(--text-color);
   }
   
@@ -299,14 +294,7 @@ nav ul li a:hover  {
     box-shadow: 0 8px 16px var(--accent-color);
   }
   
-.card img{
-    width: 50%;
-    height: auto;
-    align-items: center;
-    justify-content: center;
-    border-radius: 10%;
-    margin: 1rem;
-}
+
 
 
   
@@ -402,16 +390,9 @@ iframe {
     }
     
 
-.card {
-    width: 100%;
-    height: auto;
-}
+.services {
+max-width: 100%;
 
-.card img{
-    width: 50%;
-    height: auto;
-    border-radius: 0%;
-    margin: 1rem;
 }
     .column {
     width: 100%;
