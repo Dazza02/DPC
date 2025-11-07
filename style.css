@@ -247,7 +247,13 @@ nav ul li a:hover  {
     display: grid;
     gap: 1rem;
     grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
-    justify-content: center;
+  }
+
+  .best-seller img{
+    width: 530px;
+    top: 0;
+    bottom: 0;
+    right: 10%;
   }
 
 .services{
@@ -434,6 +440,7 @@ max-width: 100%;
         align-items: center;
     }
       }
+
 
 
 
