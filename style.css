@@ -297,6 +297,7 @@ nav ul li a:hover  {
     top: 0;
     flex-grow: 1;
     height: auto;
+    margin: 0 0;
   }
 
 
@@ -433,5 +434,6 @@ max-width: 100%;
         align-items: center;
     }
       }
+
 
 
