@@ -374,33 +374,22 @@ iframe {
     }
     
 /* ----------------Phone View---------------------- */
-
 @media (max-width:600px) {
    
     
-    nav{
-    position: fixed;
-    top: 0;
-    right: -100%;
-    height: 100vh;
-    width: min(15em, 100%);
-    z-index: 10;
-    transition: right 300ms ease-in-out;
-  }
-  nav.show{
+    nav ul {
+        display: block;
+    width: 100%;
+    background: var(--bg);
+    position: absolute;
+    top: 75px;
     right: 0;
-  }
-  nav.show ~ #overlay{
-    display: block;
-  }
-  nav ul{
-    width: 100%;
-    flex-direction: column;
-  }
-  nav a{
-    width: 100%;
-    padding-left: 2.5em;
-  }
+    z-index: 2;
+    }
+    nav ul li{
+        display: block;
+        margin-top: 10px;
+        margin-bottom: 5px;
 
     .menu-icon {
         display: block;
@@ -412,12 +401,10 @@ iframe {
         font-size: 3rem;
     }
     .menu-icon  :hover{
-        color: var(--accent-color);
+        color: var(--primary);
         transition: .5x;
-
     }
-    
-
+        
 .services {
 max-width: 100%;
 
@@ -446,16 +433,3 @@ max-width: 100%;
     }
       }
 
-@media (max-width:1024px) {
-.best-seller img{
-    max-width: 10%;
-}
-  .text .text p {
-        max-width: 50%;
-        align-items: center;
-    }
-      }
-    }
- 
-
-}
