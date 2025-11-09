@@ -7,107 +7,73 @@
     text-decoration: none;
     user-select: none;
     scroll-behavior: smooth;
-    text-align: center;
 }
 
-:root {
-  /* hsl (fallback color) */
-  --bg-dark: hsl(231 92% 3%);
-  --bg: hsl(223 71% 6%);
-  --bg-light: hsl(220 48% 10%);
-  --text: hsl(219 100% 100%);
-  --text-muted: hsl(219 51% 74%);
-  --highlight: hsl(220 28% 43%);
-  --border: hsl(220 36% 32%);
-  --border-muted: hsl(220 51% 21%);
-  --primary: hsl(219 78% 75%);
-  --secondary: hsl(40 54% 60%);
-  --danger: hsl(9 37% 65%);
-  --warning: hsl(52 26% 54%);
-  --success: hsl(147 24% 57%);
-  --info: hsl(217 40% 66%);
+:root{
+--bg-dark: hsl(228 79% 2%);
+--bg: hsl(222 55% 5%);
+--bg-light: hsl(219, 29%, 13%);
+--text: hsl(220 100% 98%);
+--text-muted: hsl(220 35% 73%);
+--highlight: hsl(220 20% 42%);
+--shadow: 0 2px 2px hsla(0, 0%, 0%, 0.226), 0px 6px 6px hsla(0, 0%, 0%, 0.233);
+--border: hsl(220 26% 31%);
+--border-muted: hsl(220 37% 20%);
+--primary: hsl(220 78% 76%);
+--secondary: hsl(40 53% 60%);
+--danger: hsl(9 26% 64%);
+--warning: hsl(52 19% 57%);
+--success: hsl(146 17% 59%);
+--info: hsl(217 28% 65%);
 }
-body .light{
-      /* hsl (fallback color) */
-  --bg-dark: hsl(219 89% 92%);
-  --bg: hsl(219 100% 97%);
-  --bg-light: hsl(219 100% 100%);
-  --text: hsl(230 98% 8%);
-  --text-muted: hsl(220 36% 32%);
-  --highlight: hsl(219 100% 100%);
-  --border: hsl(219 89% 92%);
-  --border-muted: hsl(219 39% 66%);
-  --primary: hsl(220 50% 33%);
-  --secondary: hsl(44 100% 14%);
-  --danger: hsl(9 28% 41%);
-  --warning: hsl(51 36% 31%);
-  --success: hsl(149 30% 34%);
-  --info: hsl(217 30% 42%);
-}
-
-
+@media(prefers-color-scheme: light){
+    :root{
+--bg-dark: hsl(220 59% 91%);
+--bg: hsl(220 100% 97%);
+--bg-light: hsl(220 100% 100%);
+--text: hsl(226 85% 7%);
+--text-muted: hsl(220 26% 31%);
+--highlight: hsl(220 100% 100%);
+--shadow: 0 2px 2px hsla(0, 0%, 0%, 0.226), 0px 6px 6px hsla(0, 0%, 0%, 0.233);
+--border: hsl(220 19% 53%);
+--border-muted: hsl(220 27% 65%);
+--primary: hsl(221 49% 33%);
+--secondary: hsl(44 100% 14%);
+--danger: hsl(9 21% 41%);
+--warning: hsl(52 23% 34%);
+--success: hsl(147 19% 36%);
+--info: hsl(217 22% 41%); 
+}}
 
 html,body {
     width: 100%;
     width: 100%;
     background:var(--bg-dark);
     scroll-behavior: smooth;
-    cursor: url("cursor.png"), auto;
 }
-
-
 /* ----------------Defults---------------------- */
-
-button{
-    background-color: var(--bg-light);
-    padding: 1rem;
-    margin: 1rem;
-    border-radius: 5rem;
-    cursor: pointer;
-    list-style-type: none;
-    text-decoration: none;
-    border-color: var(--bg-dark);
-    outline: none;
-    color: var(--text-color);
-    border-top: solid 1px var(--highlight);
-    box-shadow: var(--shad);
-}
-
-button:hover{
-    background-color:var(--primary);
-    color: var(--bg);
-    transform: scale(1.1);
-    box-shadow: 0 0 30px rgb(10, 153, 219);
-    outline: none;
-    border: 2px solid var(--border-muted);
-
-}
 .cta{
     display: inline-block;
     padding: 10px 30px;
     background: var(--bg-light);
-    border: 2px solid var(--bg-dark);
+    border-top: 1px solid var(--highlight);
     border-radius: 40px;
-    box-shadow: 0 0 10px var(--border-muted);
     font-size: 16px;
-    color: var(--primary);
+    color: var(--text);
     font-weight: 600;
     transition: .5s;
     margin-bottom: 1rem;
-    border-top: solid 1px var(--highlight);
+    box-shadow: var(--shadow);
 
 }
 
 .cta:hover{
-    background: transparent;
-    color: var(--primary);
+    background: var(--bg);
     box-shadow: none;
-    border: 2px solid var(--border-muted);
-
 }
 
 h1,h2 {
-    color: var(--text);
+    color: var(--primary);
     font-size: clamp (1.8rem, 10vw, 5rem);
     margin: 1rem;
     text-align: center;
@@ -129,26 +95,25 @@ p {
 img{
     max-width: 100%;
     max-height: 100%;
-        border-radius: 1rem;
+    border-radius: 1rem;
 }
 
-section{
+.grid-side-by-side{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+}
+
+.grid-item{
     padding: 50px;
 }
 
-
-
-.text {
-    flex: 1;
-    min-width: 50%;
-    padding: 0 1rem;
+.grid-item img {
+    width: 70%;
+    height: auto;
+    margin: 0 1rem;
 }
 
-
-
-img :hover{
-    transform: scale(2);
-}
 .footer {
     overflow: none;
     justify-content: space-evenly;
@@ -158,7 +123,9 @@ img :hover{
     text-align: center;
     padding: 2rem;
     width: 100%;
-    color: var(--text-muted);
+    color: var(--text);
+    box-shadow: inset 0 4px 4px hsla(0, 0%, 0%, 0.39), 0px 6px 6px hsla(0, 0%, 0%, 0.37);
+;
 }
 
 
@@ -213,8 +180,6 @@ nav ul li a:hover  {
     font-weight: 700;
 }
 
-
-
 .socials a{
     display: inline-flex;
     padding: 8px;
@@ -224,59 +189,37 @@ nav ul li a:hover  {
     color: var(--primary);
     margin: 0 8px;
     transition: .5s;
+    justify-content: space-between;
+    margin: 1rem;
+    font-size: 2em;
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+    justify-self: center;
 }
 .socials a:hover{
     background: var(--primary);
-    color: var(--bg);
+    color: var(--bg-dark);
     box-shadow: 0 0 10px var(--primary);
 }
 
 /* ----------------Home---------------------- */
-
-.home-image{
-    position: absolute;
-    margin-top: 5rem;
-    width: 530px;
-    top: 0;
-    bottom: 0;
-    right: 10%;
-    
-}
-.socials a{
-    justify-content: space-between;
-    margin: 1rem;
-    font-size: 2em;
-}
-
-.best-seller{
-    display: grid;
-    gap: 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
-  }
-
-  .best-seller img{
-    width: 530px;
-    top: 0;
-    bottom: 0;
-    right: 10%;
-  }
-
 .services{
+    padding: 2em;
     display: grid;
     gap: 1rem;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     justify-content: center;
-    background: linear-gradient(to bottom, var(--background-color), #1b8de5, var(--background-color));
   }
 
-  #best-seller-tag{
+    #best-seller-tag{
     padding: 1em 0;
-    background: var(--bg-light);
-    border: 2px solid var(--border);
+    background: var(--bg);
+    border-top: 1px solid var(--highlight);
+    box-shadow: var(--shadow);    
     border-radius: 5px;
-    box-shadow: 0 0 10px var(--border-muted);
     font-size: 1rem;
-    color: var(--primary);
+    color: var(--text);
     font-weight: 600;
     text-align: center;
     margin: 0 0;
@@ -284,6 +227,7 @@ nav ul li a:hover  {
   }
   
   .testimonials{
+    padding: 2em;
     display: grid;
     gap: 1rem;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -291,11 +235,12 @@ nav ul li a:hover  {
   }
   
   .card {
-   background-color: var(--bg);
+   background-color: var(--bg-light);
    place-content: center;
    border-radius: 1rem;
    max-height: fit-content;
-    border: 2px solid var(--border);
+    border-top: 1px solid var(--highlight);
+    box-shadow: var(--shadow);    
   }
 
   .card img{
@@ -304,29 +249,20 @@ nav ul li a:hover  {
     top: 0;
     flex-grow: 1;
     height: auto;
+    margin: 0 0;
+     border-top: 1.5px solid var(--highlight);
+    box-shadow: var(--shadow);    
   }
 
   .card p{
     padding: fit-content;
-    color: var(--text-muted);
+    color: var(--text);
   }
-  
-  .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px var(--border-muted);
-  }
-  
-
-
-
-  
 /* ----------------Store---------------------- */
-
 iframe {
     height: 100vh;
     width: 100vw;
 }
-
 /* ----------------About---------------------- */
 .about .text{
     margin-right: 2rem;
@@ -337,7 +273,6 @@ iframe {
     box-shadow: 0 0 30px #0dd54c;
     border-radius: 2rem;
 }
-
 /* ----------------Creations---------------------- */
 .back-to-top {
     position: fixed;
@@ -347,24 +282,23 @@ iframe {
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    background-color: var(--bg-light);
-    box-shadow: 0 0 20px var(--border-muted);
+    background-color:var(--bg-light);
+     border-top: 1px solid var(--highlight);
+    box-shadow: var(--shadow);    
     color: var(--text);
     width: 2rem;
     height: 2rem;
     font-size: 30px;
     font-weight: 500;
-     border: solid 1px var(--border);
 }
 
 .back-to-top:hover{
-    transform: scale(1.1);
-    border-top: solid 1px var(--highlight);
+transform: scale(1.1);
+background-color: var(--bg);
 }
     .gallery{
  columns: 400px;
-    }
-
+}
     .gallery img{
       width: 100%;
       padding: 5px;
@@ -374,62 +308,56 @@ iframe {
     }
     
 /* ----------------Phone View---------------------- */
+
 @media (max-width:600px) {
-   
-    
-    nav ul {
-        display: block;
-    width: 100%;
-    background: var(--bg);
-    position: absolute;
-    top: 75px;
-    right: 0;
-    z-index: 2;
-    }
-    nav ul li{
-        display: block;
-        margin-top: 10px;
-        margin-bottom: 5px;
-
-    .menu-icon {
-        display: block;
-
-    }
-    
-    .menu-icon i {
-        color: var(--text);
-        font-size: 3rem;
-    }
-    .menu-icon  :hover{
-        color: var(--primary);
-        transition: .5x;
-    }
-        
+nav{
+background: var(--bg);
+}    
+nav ul {
+display: block;
+width: 100%;
+background: var(--bg);
+position: absolute;
+top: 75px;
+right: 0;
+z-index: 2;
+}
+nav ul li{
+display: block;
+margin-top: 10px;
+margin-bottom: 5px;
+margin-right: 1em;
+text-align: right;
+}
+.menu-icon {
+display: block;
+color: var(--text);
+}   
+.menu-icon i {
+ font-size: 3rem;
+}
 .services {
 max-width: 100%;
-
 }
-    .column {
-    width: 100%;
-    text-align: center;
-    
-      display: block;
-      overflow: hidden;
-    }
-    #menuList{
-        overflow: hidden;
-        transition: .5s;
-    }
-    .about img{
-        max-width: 100%;
-        align-items: center;
-    }
-    section .services .testimonials{
-        display: flex;
-    }
-    .text .text p {
-        max-width: 100%;
-        align-items: center;
-    }
-      }
-
+.grid-side-by-side{
+grid-template-columns: 1fr;
+}
+.grid-item img{
+max-width: 80%;
+align-items: center;
+align-self: center;
+justify-content: center;
+justify-self: center;
+}
+#menuList{
+overflow: hidden;
+transition: .5s;
+}
+section .services .testimonials{
+display: flex;
+}
+.text .text p {
+max-width: 100%;
+align-items: center;
+}
+}
