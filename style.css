@@ -206,10 +206,21 @@ nav ul li a:hover  {
 /* ----------------Home---------------------- */
 .services{
     padding: 2em;
-    display: grid;
-    gap: 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    justify-content: center;
+     display: grid;
+  /* Define column width for each grid item */
+  grid-auto-columns: 300px; /* Adjust as needed */
+  /* Arrange grid items in a single row */
+  grid-auto-flow: column;
+  /* Add gap between grid items */
+  grid-gap: 16px;
+  /* Enable horizontal scrolling */
+  overflow-x: auto;
+  /* Optional: Hide scrollbar if desired (for a cleaner look) */
+  scrollbar-width: none; 
+  -ms-overflow-style: none; 
+  scroll-snap-type: x mandatory;
+    padding-left: 1em;
+
   }
 
     #best-seller-tag{
@@ -228,11 +239,22 @@ nav ul li a:hover  {
   
   .testimonials{
     padding: 2em;
-    display: grid;
-    gap: 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    justify-content: center;
+     display: grid;
+  /* Define column width for each grid item */
+  grid-auto-columns: 300px; /* Adjust as needed */
+  /* Arrange grid items in a single row */
+  grid-auto-flow: column;
+  /* Add gap between grid items */
+  grid-gap: 16px;
+  /* Enable horizontal scrolling */
+  overflow-x: auto;
+  /* Optional: Hide scrollbar if desired (for a cleaner look) */
+  scrollbar-width: none; 
+  -ms-overflow-style: none; 
+  scroll-snap-type: x mandatory;
+  padding-left: 1em;
   }
+
   
   .card {
    background-color: var(--bg-light);
@@ -241,6 +263,8 @@ nav ul li a:hover  {
    max-height: fit-content;
     border-top: 1px solid var(--highlight);
     box-shadow: var(--shadow);    
+        scroll-snap-align: start;
+        padding: 1rem;
   }
 
   .card img{
@@ -361,4 +385,5 @@ max-width: 100%;
 align-items: center;
 }
 }
+
 
