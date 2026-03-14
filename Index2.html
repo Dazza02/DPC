@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <Style>
+        * {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #303032;
+}
+
+/* Responsive anchored navigation */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: #1f1f21;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  border-bottom: 1px solid #444;
+}
+
+.navbar .logo {
+  color: #f1f0e5;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.section-title {
+  color: #5f98f7;
+  text-align: center;
+  margin: 1.2rem auto 1rem;
+  font-size: 1.7rem;
+  grid-column: 2 / span 12;
+  max-width: 980px;
+}
+
+.navbar .nav-links {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.navbar .nav-links a {
+  color: #f1f0e5;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.44rem 0.65rem;
+  border-radius: 0.4rem;
+  transition: all 0.2s ease;
+}
+
+.navbar .nav-links a:hover,
+.navbar .nav-links a:focus {
+  background: #5f98f7; /* ancient gold hover */
+  color: #111;
+}
+
+.nav-toggle {
+  display: none;
+  cursor: pointer;
+  border: 1px solid #666;
+  border-radius: 0.4rem;
+  color: #f1f0e5;
+  width: 38px;
+  height: 38px;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: #f1f0e5;
+  margin: 4px 0;
+}
+
+section {
+  scroll-margin-top: 80px;
+}
+
+@media (max-width: 768px) {
+  .navbar .nav-links {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: #1f1f21;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 220px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.25s ease;
+    padding: 0;
+  }
+
+  .navbar .nav-links.open {
+    max-height: 220px;
+    padding: 0.8rem 0.6rem;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav--desktop {
+    display: none;
+  }
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr repeat(12, minmax(auto, 60px)) 1fr;
+  grid-gap: 40px;
+  padding: 60px 0 120px; /* extra bottom for fixed footer */
+}
+
+.text--medium {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+  color: #ecf0f1;
+}
+
+.cards {
+  grid-column: 2 / span 12;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(auto, 60px));
+  grid-gap: 40px;
+}
+
+.card {
+  grid-column-end: span 4;
+  display: flex;
+  flex-direction: column;
+  background-color: #39393b;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+
+.card:hover {
+  transform: translateY(-7px);
+}
+
+.card__image-container {
+  width: 100%;
+  padding-top: 56.25%;
+  overflow: hidden;
+  position: relative;
+}
+
+.card__image-container img {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.card__content {
+  padding: 20px;
+}
+
+.card__title {
+  margin-bottom: 20px;
+}
+
+.card__info {
+  display: flex;
+  align-self: end;
+  align-items: center;
+}
+
+.card__price {
+  margin-left: auto;
+  padding: 5px 20px;
+  background-color: #303032;
+  border-radius: 20px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .card {
+    grid-column-end: span 6;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  main {
+    grid-gap: 20px;
+  }
+  .card {
+    grid-column-end: span 12;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  main {
+    grid-template-columns: 10px repeat(6, 1fr) 10px;
+    grid-gap: 10px;
+  }
+  .cards {
+    grid-column: 2 / span 6;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 20px;
+  }
+  .card {
+    grid-column-end: span 6;
+  }
+}
+
+.service-hero {
+  grid-column: 2 / span 12;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(auto, 60px));
+  gap: 20px;
+  align-items: center;
+  padding: 2rem 0 3rem;
+}
+
+.service-hero .hero-content {
+  grid-column: 2 / span 6;
+  color: #ecf0f1;
+}
+
+.service-hero .hero-content h2 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  color: #5f98f7;
+}
+
+.service-hero .hero-content p {
+  color: #dcdcdc;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.service-hero .socials {
+  display: flex;
+  gap: 0.8rem;
+  margin-bottom: 1.25rem;
+}
+
+.service-hero .socials a {
+  background: #39393b;
+  color: #5f98f7;
+  padding: 0.5rem 0.7rem;
+  border-radius: 0.6rem;
+  border: 1px solid #5f98f7;
+}
+
+.service-hero .hero-image {
+  grid-column: 8 / span 4;
+}
+
+.service-hero .hero-image img {
+  width: 100%;
+  border-radius: 1rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+}
+
+.about-section {
+  grid-column: 2 / span 12;
+  background: #28282a;
+  border: 1px solid #444;
+  border-radius: 1rem;
+  padding: 2rem;
+  margin: 1.5rem 0;
+}
+
+.about-content {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  color: #e1e1e1;
+}
+
+.about-content h2 {
+  margin-bottom: 0.8rem;
+  color: #5f98f7;
+}
+
+.about-content p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  font-size: 1.05rem;
+}
+
+.read-more-btn {
+  background: #5f98f7;
+  color: #fff;
+  border: none;
+  border-radius: 0.6rem;
+  padding: 0.7rem 1.3rem;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.read-more-btn:hover {
+  background: #4677cc;
+}
+
+@media (max-width: 900px) {
+  .service-hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .service-hero .hero-content {
+    grid-column: 1 / -1;
+  }
+  .service-hero .hero-image {
+    grid-column: 1 / -1;
+  }
+}
+
+.testimonial-slider {
+  background-color: #2a2a2c;
+  padding: 2rem 1rem 2.5rem;
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: #5f98f7 transparent;
+  grid-column: 2 / span 12;
+  width: 100%;
+  justify-content: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+  scroll-padding-left: 1rem;
+  scroll-padding-right: 1rem;
+}
+
+.site-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: #1f1f21;
+  color: #e6e3d8;
+  padding: 1rem 1.2rem;
+  border-top: 1px solid #444;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-content {
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-copy {
+  font-size: 0.85rem;
+  color: #c7c3b2;
+}
+
+.footer-social {
+  display: flex;
+  gap: 0.7rem;
+}
+
+.footer-social a {
+  color: #f1f0e5;
+  text-decoration: none;
+  font-size: 0.85rem;
+  border: 1px solid transparent;
+  padding: 0.35rem 0.65rem;
+  border-radius: 0.4rem;
+}
+
+.footer-social a:hover {
+  border-color: #3791c9;
+  background: rgba(55, 145, 201, 0.15);
+  border-color: #3791c9;
+}
+
+@media (max-width: 600px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer-copy {
+    font-size: 0.8rem;
+  }
+}
+
+.testimonial-slider::-webkit-scrollbar {
+  height: 8px;
+}
+
+.testimonial-slider::-webkit-scrollbar-thumb {
+  background: #5f98f7;
+  border-radius: 999px;
+}
+
+.testimonial-slider::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.testimonial-card {
+  flex: 0 0 320px;
+  max-width: 320px;
+  background: #39393b;
+  border: 1px solid #444;
+  border-radius: 1rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,.35);
+  padding: 1rem;
+  scroll-snap-align: start;
+  min-height: 280px;
+  color: #fff;
+}
+
+.testimonial-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 0.75rem;
+  margin-bottom: 0.8rem;
+}
+
+.testimonial-card p {
+  color: #f0f0f0;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.testimonial-card span {
+  color: #5f98f7;
+  font-weight: 700;
+}
+
+@media (max-width: 900px) {
+  .testimonial-card {
+    flex: 0 0 min(260px, 85%);
+  }
+}
+
+@media (max-width: 600px) {
+  .testimonial-slider {
+    padding: 1rem 0.5rem 1.5rem;
+  }
+  .testimonial-card {
+    flex: 0 0 min(240px, 90%);
+  }
+}
+    </Style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Card Layout with CSS Grid</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">Dale's Photo Creations</div>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="nav-links nav--desktop" role="navigation">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="portfolio.html">Portfolio</a>
+      </div>
+    </nav>
+    <main>
+       <section id="home" class="service-hero">
+        <div class="hero-content">
+          <h2>Fast, professional photo creations</h2>
+          <p>Bring your memories to life with high-quality edits, restorations, group additions, and creative transformations. Start your request today and get a tailor-made result in just a few days.</p>
+          <div class="socials">
+            <a href="https://www.facebook.com/Dalesphotocreations/" target="_blank">Facebook</a>
+            <a href="https://www.instagram.com/_dalesphotocreations_/" target="_blank">Instagram</a>
+            <a href="https://www.youtube.com/channel/UCsLWhkqD3dYz9_nwicqgL0Q" target="_blank">YouTube</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img src="Creative media/BEN 10.jpg" alt="Photo creation example">
+        </div>
+      </section>
+
+      <h2 class="section-title">Our Services</h2>
+      <section id="services" class="cards">
+        <div class="card">
+          <div class="card__image-container">
+            <img
+              src="Creative media/Y&O Mum.jpg"
+            />
+          </div>
+          <div class="card__content">
+            <p class="card__title text--medium">
+             Young & Old photos
+            </p>
+            <div class="card__info">
+              <p class="text--medium">Same person, different ages</p>
+              <p class="card__price text--medium">$25</p>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card__image-container">
+            <img
+              src="Creative media/Real Alien drawing.jpeg"
+            />
+          </div>
+          <div class="card__content">
+            <p class="card__title text--medium">
+              Photo Manipulation
+            </p>
+            <div class="card__info">
+              <p class="text--medium">Anyting is possable!</p>
+              <p class="card__price text--medium">$25</p>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card__image-container">
+            <img
+              src="Creative media/Group additions.jpg"
+            />
+          </div>
+          <div class="card__content">
+            <p class="card__title text--medium">
+              Group Additions
+            </p>
+            <div class="card__info">
+              <p class="text--medium">Add/Remove anyone from the group</p>
+              <p class="card__price text--medium">$25</p>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card__image-container">
+            <img
+              src="Creative media/Mums Birthday 2023.jpg"
+            />
+          </div>
+          <div class="card__content">
+            <p class="card__title text--medium">
+              Photo Gifts
+            </p>
+            <div class="card__info">
+              <p class="text--medium">Special occasion photo gifts</p>
+              <p class="card__price text--medium">$25</p>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card__image-container">
+            <img
+              src="Creative media/colorised photo NAN.jpg"
+            />
+          </div>
+          <div class="card__content">
+            <p class="card__title text--medium">
+              Photo Restoration
+            </p>
+            <div class="card__info">
+              <p class="text--medium">Restore old or damaged photos</p>
+              <p class="card__price text--medium">$25</p>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card__image-container">
+            <img
+              src="Creative media/Dale at Hogwarts express.jpg"
+            />
+          </div>
+          <div class="card__content">
+            <p class="card__title text--medium">
+              Green Screen
+            </p>
+            <div class="card__info">
+              <p class="text--medium">Create stunning green screen effects</p>
+              <p class="card__price text--medium">$10</p>
+            </div>
+          </div>
+        </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="about-section">
+        <div class="about-content">
+          <h2>About Dale’s Photo Creations</h2>
+          <p>With years of experience blending the best of photo restoration and creative design, we craft high-quality memories you can treasure. Whether you need a touch-up, a collage, or a dreamlike edit, we make the process easy and fast.</p>
+          <p class="about-more-text" style="display:none;">From the moment I started learning Photoshop in 2016, I fell in love with it. It became my passion. I began learning it with passion. Soon after, my family caught on. They started asking me to touch up family photos and make unique birthday photo presents.</p>
+          <button class="read-more-btn" id="readMoreBtn">Read more</button>
+        </div>
+      </section>
+
+      <h2 style="grid-column: 2 / span 12; color: #5f98f7; margin-bottom: 1rem; text-align: center;">Testimonials</h2>
+      <section id="testimonials" class="testimonial-slider">
+        <div class="testimonial-card">
+          <img src="Creative media/Y&O Opa.jpg" alt="Jo testimonial">
+          <p><span>Jo</span> | "I am more than happy with mine, can't believe I looked that good though! The concept is a great gift idea for Christmas!"</p>
+        </div>
+        <div class="testimonial-card">
+          <img src="Creative media/Y&O Lyn.jpg" alt="Lyn testimonial">
+          <p><span>Lyn</span> | "I am yet to use Dale's creations. I intend to use him with photos for my family history book that I am writing. I am impressed with his work, especially on the child-to-adult photos he has done. Looking forward to using your services Dale. Initial contact with you has been seamless."</p>
+        </div>
+        <div class="testimonial-card">
+          <img src="Creative media/Y&O Helen.jpg" alt="Helen testimonial">
+          <p><span>Helen</span> | "Fantastic work! I can highly recommend Dale for any photography creations."</p>
+        </div>
+        <div class="testimonial-card">
+          <img src="Creative media/Y&O Dennis.jpg" alt="Donna testimonial">
+          <p><span>Donna</span> | "Love this young and old photo of my Dad that my cousin's son Dale created for Dad's 70th Birthday. If you're looking for photo creations like this then contact Dale's Photo Creations via Facebook. Highly recommend his work, go check out his page!"</p>
+        </div>
+        <div class="testimonial-card">
+          <img src="Creative media/Market photos SAM.jpg" alt="Sam testimonial">
+          <p><span>Sam</span> | "If you’re thinking about a Christmas photo, but honestly, hit up Dale's Photo Creations for a super easy and unique picture! Just send him your photo, whatever background your heart desires (or choose one he already has) and taa-daa! Christmas magic"</p>
+        </div>
+      </section>
+
+      <footer class="site-footer" aria-label="Site footer">
+        <div class="footer-content">
+          <div class="footer-copy">© <span id="currentYear"></span> Dale's Photo Creations. All rights reserved.</div>
+          <div class="footer-social" aria-label="Social media links">
+            <a href="https://www.facebook.com/Dalesphotocreations/" target="_blank" rel="noopener noreferrer">Facebook</a>
+            <a href="https://www.instagram.com/_dalesphotocreations_/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="https://www.youtube.com/channel/UCsLWhkqD3dYz9_nwicqgL0Q" target="_blank" rel="noopener noreferrer">YouTube</a>
+          </div>
+        </div>
+      </footer>
+
+      </main>
+    <script>
+      !(function() {
+        var analytics = (window.analytics = window.analytics || []);
+        if (!analytics.initialize)
+          if (analytics.invoked)
+            window.console &&
+              console.error &&
+              console.error("Segment snippet included twice.");
+          else {
+            analytics.invoked = !0;
+            analytics.methods = [
+              "trackSubmit",
+              "trackClick",
+              "trackLink",
+              "trackForm",
+              "pageview",
+              "identify",
+              "reset",
+              "group",
+              "track",
+              "ready",
+              "alias",
+              "debug",
+              "page",
+              "once",
+              "off",
+              "on"
+            ];
+            analytics.factory = function(t) {
+              return function() {
+                var e = Array.prototype.slice.call(arguments);
+                e.unshift(t);
+                analytics.push(e);
+                return analytics;
+              };
+            };
+            for (var t = 0; t < analytics.methods.length; t++) {
+              var e = analytics.methods[t];
+              analytics[e] = analytics.factory(e);
+            }
+            analytics.load = function(t, e) {
+              var n = document.createElement("script");
+              n.type = "text/javascript";
+              n.async = !0;
+              n.src =
+                "https://cdn.segment.com/analytics.js/v1/" +
+                t +
+                "/analytics.min.js";
+              var a = document.getElementsByTagName("script")[0];
+              a.parentNode.insertBefore(n, a);
+              analytics._loadOptions = e;
+            };
+            analytics.SNIPPET_VERSION = "4.1.0";
+            analytics.load("FQ5NJmRc6LrFKVAC6ofHlSU7WIwGAdj5");
+            analytics.page();
+          }
+      })();
+
+var navToggle = document.querySelector('.nav-toggle');
+var navLinks = document.querySelector('.nav-links');
+if (navToggle && navLinks) {
+  navToggle.addEventListener('click', function() {
+    var expanded = this.getAttribute('aria-expanded') === 'true';
+    this.setAttribute('aria-expanded', String(!expanded));
+    navLinks.classList.toggle('open');
+  });
+
+  navLinks.querySelectorAll('a').forEach(function(link) {
+    link.addEventListener('click', function() {
+      navLinks.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+}
+
+var readMoreBtn = document.getElementById('readMoreBtn');
+var aboutMoreText = document.querySelector('.about-more-text');
+if (readMoreBtn && aboutMoreText) {
+  readMoreBtn.addEventListener('click', function() {
+    var expanded = aboutMoreText.style.display === 'block';
+    aboutMoreText.style.display = expanded ? 'none' : 'block';
+    readMoreBtn.textContent = expanded ? 'Read more' : 'Show less';
+  });
+}
+
+(function() {
+  var yearEl = document.getElementById('currentYear');
+  if (yearEl) {
+    yearEl.textContent = new Date().getFullYear();
+  }
+})();
+    </script>
+  </body>
+</html>

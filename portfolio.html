@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DPC | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <style>
+    * { box-sizing: border-box; padding: 0; margin: 0; }
+    body { background: #303032; color: #f1f0e5; font-family: 'Open Sans', sans-serif; }
+
+    .navbar {
+      position: fixed; top: 0; left: 0; right: 0; height: 60px; background: #1f1f21;
+      z-index: 1000; display: flex; align-items: center; justify-content: space-between;
+      padding: 0 1rem; border-bottom: 1px solid #444;
+    }
+    .navbar .logo { color: #f1f0e5; font-size: 1.1rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.08em; }
+    .navbar .nav-links { display: flex; gap: 0.75rem; align-items: center; }
+    .navbar .nav-links a {
+      color: #f1f0e5; text-decoration: none; font-size: 0.95rem; font-weight: 600;
+      padding: 0.44rem 0.65rem; border-radius: 0.4rem; transition: all 0.2s ease;
+    }
+    .navbar .nav-links a:hover, .navbar .nav-links a:focus {
+      background: #5f98f7; color: #111;
+    }
+    .nav-toggle { display: none; cursor: pointer; border: 1px solid #666;
+      border-radius: 0.4rem; color: #f1f0e5; width: 38px; height: 38px;
+      align-items: center; justify-content: center;
+    }
+    .nav-toggle span { display: block; width: 20px; height: 2px; background: #f1f0e5; margin: 4px 0; }
+
+    .section-title { color: #5f98f7; text-align: center; margin: 1.2rem auto 1rem;
+      font-size: 1.7rem; max-width: 980px; }
+
+    main { display: grid; grid-template-columns: 1fr repeat(12, minmax(auto, 60px)) 1fr;
+      grid-gap: 40px; padding: 60px 0 120px;
+    }
+
+    .gallery-wrapper { grid-column: 2 / span 12; }
+    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px; padding: 0; }
+    .gallery-item { position: relative; cursor: pointer; }
+    .gallery-item img { width: 100%; height: auto; border-radius: 1rem; object-fit: cover; }
+    .gallery-item figcaption { position: absolute; bottom: 0; left: 0; right: 0;
+      padding: 0.5rem; background: rgba(0,0,0,0.5); color: #fff; font-size: 0.9rem;
+      text-align: center; border-bottom-left-radius: 1rem; border-bottom-right-radius: 1rem;
+    }
+
+    .lightbox { position: fixed; inset: 0; display: none; align-items: center;
+      justify-content: center; background: rgba(0,0,0,0.9); z-index: 9999; padding: 1rem;
+    }
+    .lightbox.active { display: flex; }
+    .lightbox-image { max-width: 90%; max-height: 80%; border-radius: 1rem;
+      box-shadow: 0 0 30px rgba(0,0,0,.8); object-fit: contain;
+    }
+    .lightbox-close, .lightbox-nav {
+      position: absolute; border: none; background: rgba(0,0,0,.4); color: #fff;
+      font-size: 2rem; width: 3rem; height: 3rem; border-radius: 50%; cursor: pointer;
+      display: flex; align-items: center; justify-content: center; transition: background .2s ease;
+    }
+    .lightbox-close:hover, .lightbox-nav:hover { background: rgba(0,0,0,.7); }
+    .lightbox-close { top: 1rem; right: 1rem; }
+    .lightbox-nav.prev { left: 1rem; }
+    .lightbox-nav.next { right: 1rem; }
+
+    .site-footer { position: fixed; bottom: 0; left: 0; right: 0; z-index: 1000;
+      background: #1f1f21; color: #e6e3d8; padding: 1rem 1.2rem; border-top: 1px solid #444;
+      text-align: center; display: flex; flex-direction: column; gap: 0.5rem;
+    }
+
+    .footer-content {
+      max-width: 1100px;
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-copy {
+      font-size: 0.85rem;
+      color: #c7c3b2;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 0.7rem;
+    }
+
+    .footer-social a {
+      color: #f1f0e5;
+      text-decoration: none;
+      font-size: 0.85rem;
+      border: 1px solid transparent;
+      padding: 0.35rem 0.65rem;
+      border-radius: 0.4rem;
+    }
+
+    .footer-social a:hover {
+      border-color: #3791c9;
+      background: rgba(55, 145, 201, 0.15);
+      border-color: #3791c9;
+    }
+
+    @media (max-width: 600px) {
+      .footer-content {
+        flex-direction: column;
+        align-items: center;
+      }
+      .footer-copy {
+        font-size: 0.8rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .navbar .nav-links { position: absolute; top: 60px; right: 0; background: #1f1f21;
+        flex-direction: column; align-items: flex-start; width: 220px; max-height: 0;
+        overflow: hidden; transition: max-height 0.25s ease; padding: 0;
+      }
+      .navbar .nav-links.open { max-height: 220px; padding: 0.8rem 0.6rem; }
+      .nav-toggle { display: flex; }
+      .nav--desktop { display: none; }
+      main { grid-template-columns: 10px repeat(6,1fr) 10px; grid-gap: 20px; }
+      .gallery-wrapper { grid-column: 2 / span 6; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">Dale's Photo Creations</div>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" id="navToggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <div class="nav-links nav--desktop" role="navigation" id="navLinks">
+      <a href="Index2.html">Home</a>
+      <a href="Index2.html#services">Services</a>
+      <a href="Index2.html#about">About</a>
+      <a href="Index2.html#testimonials">Testimonials</a>
+      <a href="portfolio.html" style="background:#5f98f7;color:#111;">Portfolio</a>
+    </div>
+  </nav>
+
+  <main>
+    <section id="portfolio" class="gallery-wrapper">
+      <section class="gallery" id="portfolioGallery"></section>
+    </section>
+  </main>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close lightbox">&times;</button>
+    <button class="lightbox-nav prev" id="lightboxPrev" aria-label="Previous image">&#10094;</button>
+    <img class="lightbox-image" id="lightboxImage" src="" alt="" />
+    <button class="lightbox-nav next" id="lightboxNext" aria-label="Next image">&#10095;</button>
+  </div>
+
+  <script>
+    const images = [
+      "Apple painting .jpg",
+      "BEN 10.jpg",
+      "Book cover mockup.jpg",
+      "Cardboard bed advert.jpg",
+      "Coco frame.jpg",
+      "Coco phone hologram.jpg",
+      "Coke can.jpg",
+      "Color match.gif",
+      "Coloring page.jpg",
+      "Cover Art.jpg",
+      "Dale As Spider-man.jpg",
+      "Dale at Hogwarts express.jpg",
+      "Dale with Lightsaber.jpg",
+      "Demon Re-drawn.jpg",
+      "Desktop Background copy.jpg",
+      "Desktop background.jpg",
+      "Desktop-Background.jpg",
+      "Digital Drawing 1.jpg",
+      "Digital Drawing 2.jpg",
+      "Digital Drawing 3.jpg",
+      "Displacer beast Re-drawn.jpg",
+      "Dog Drawing NEW.jpg",
+      "Dog Drawing.jpg",
+      "Dr Strange Poster.jpg",
+      "Dragon Re-drawn.jpg",
+      "Floating House.jpg",
+      "Frost hands.jpg",
+      "Generational comparison poster.jpg",
+      "Grifin.jpg",
+      "Group additions.jpg",
+      "Helen's Photo 5x7.jpg",
+      "Helens photo 1.jpg",
+      "Helens photo 2.jpg",
+      "Hogwarts inserted.jpg",
+      "Jay pasta.jpg",
+      "Kerry Photo correction comparison.jpg",
+      "Logo re-design ZOOSH.jpg",
+      "Market photos 02 .jpg",
+      "Market photos 03 .jpg",
+      "Market photos 7.jpg",
+      "Market photos SAM.jpg",
+      "Market photos STORKEN.jpg",
+      "Mimic Re-drawn.jpg",
+      "Monster Re-drawn.jpg",
+      "Mothers day 2019.jpg",
+      "Mothers day 2023.jpg",
+      "Mums Birthday 2023.jpg",
+      "New Logo.png",
+      "OLD logo.jpg",
+      "Rapid fire ad.jpg",
+      "Real Alien drawing.jpeg",
+      "Ship-wreck.jpg",
+      "Snow frame.jpg",
+      "Star wars scene.jpg",
+      "The Hot head jpg.jpg",
+      "Tribute 1.jpg",
+      "Tribute 2.jpg",
+      "Trump-ape.jpg",
+      "Water ball.jpg",
+      "Wedding aniversery photo.jpg",
+      "Wendy's Photo combined.jpg",
+      "Wilson Y&O2.jpg",
+      "Y&O Dad.jpg",
+      "Y&O Dennis.jpg",
+      "Y&O Emeil.jpg",
+      "Y&O Grandad.jpg",
+      "Y&O Helen.jpg",
+      "Y&O Liam.jpg",
+      "Y&O Lyn.jpg",
+      "Y&O Mat.jpg",
+      "Y&O Mel.jpg",
+      "Y&O Mum.jpg",
+      "Y&O Nan.jpg",
+      "Y&O Oma.jpg",
+      "Y&O Opa.jpg",
+      "Y&O Rebekah.jpg",
+      "Y&O me.jpg",
+      "Y&OFrits generations.jpg",
+      "colorised photo Grandad.jpg",
+      "colorised photo NAN.jpg",
+      "desktop Background(1).jpg",
+      "fish bulb.jpg",
+      "jay disolving.jpg",
+      "light.jpg",
+      "nebula.jpg",
+      "phone watwerfal.jpg",
+      "website banner.jpg"
+    ];
+
+    const gallery = document.getElementById("portfolioGallery");
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightboxImage");
+    const lightboxClose = document.getElementById("lightboxClose");
+    const lightboxPrev = document.getElementById("lightboxPrev");
+    const lightboxNext = document.getElementById("lightboxNext");
+
+    let currentIndex = 0;
+
+    function openLightbox(index) {
+      currentIndex = index;
+      lightboxImg.src = `Creative media/${images[currentIndex]}`;
+      lightboxImg.alt = images[currentIndex];
+      lightbox.classList.add("active");
+      lightbox.setAttribute("aria-hidden", "false");
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove("active");
+      lightbox.setAttribute("aria-hidden", "true");
+      lightboxImg.src = "";
+      lightboxImg.alt = "";
+    }
+
+    function showPrevious() {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      lightboxImg.src = `Creative media/${images[currentIndex]}`;
+      lightboxImg.alt = images[currentIndex];
+    }
+
+    function showNext() {
+      currentIndex = (currentIndex + 1) % images.length;
+      lightboxImg.src = `Creative media/${images[currentIndex]}`;
+      lightboxImg.alt = images[currentIndex];
+    }
+
+    images.forEach((name, index) => {
+      const figure = document.createElement("figure");
+      figure.className = "gallery-item";
+      figure.innerHTML = `
+        <img src="Creative media/${name}" alt="${name}" loading="lazy">
+        <figcaption>${name}</figcaption>
+      `;
+      figure.addEventListener("click", () => openLightbox(index));
+      gallery.appendChild(figure);
+    });
+
+    lightboxClose.addEventListener("click", closeLightbox);
+    lightboxPrev.addEventListener("click", showPrevious);
+    lightboxNext.addEventListener("click", showNext);
+
+    lightbox.addEventListener("click", (event) => {
+      if (event.target === lightbox) {
+        closeLightbox();
+      }
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (!lightbox.classList.contains("active")) return;
+      if (event.key === "Escape") closeLightbox();
+      if (event.key === "ArrowLeft") showPrevious();
+      if (event.key === "ArrowRight") showNext();
+    });
+
+    const navLinks = document.getElementById("navLinks");
+    const navToggle = document.getElementById("navToggle");
+
+    navToggle.addEventListener("click", () => {
+      const expanded = navToggle.getAttribute("aria-expanded") === "true";
+      navToggle.setAttribute("aria-expanded", String(!expanded));
+      navLinks.classList.toggle("open");
+    });
+
+    document.addEventListener("click", (event) => {
+      if (!navLinks.contains(event.target) && event.target !== navToggle) {
+        navLinks.classList.remove("open");
+        navToggle.setAttribute("aria-expanded", "false");
+      }
+    });
+  </script>
+
+  <footer class="site-footer" aria-label="Site footer">
+    <div class="footer-content">
+      <div class="footer-copy">© <span id="currentYear"></span> Dale's Photo Creations. All rights reserved.</div>
+      <div class="footer-social" aria-label="Social media links">
+        <a href="https://www.facebook.com/Dalesphotocreations/" target="_blank" rel="noopener noreferrer">Facebook</a>
+        <a href="https://www.instagram.com/_dalesphotocreations_/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://www.youtube.com/channel/UCsLWhkqD3dYz9_nwicqgL0Q" target="_blank" rel="noopener noreferrer">YouTube</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("currentYear").textContent = new Date().getFullYear();
+  </script>
+
+  <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+</body>
+</html>
