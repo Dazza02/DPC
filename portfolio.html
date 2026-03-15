@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DPC | Portfolio</title>
+  <link rel="icon" type="image/png" href="favicon.png" />
   <link rel="stylesheet" href="style.css" />
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
   <link rel="icon" type="image/png" href="favicon.png" />
@@ -30,7 +31,10 @@
       border-radius: 0.4rem; color: #f1f0e5; width: 38px; height: 38px;
       align-items: center; justify-content: center;
     }
-    .nav-toggle span { display: block; width: 20px; height: 2px; background: #f1f0e5; margin: 4px 0; }
+    .nav-toggle span { display: block; width: 20px; height: 2px; background: #f1f0e5; margin: 4px 0; transition: transform 0.2s ease, opacity 0.2s ease; }
+    .nav-toggle.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+    .nav-toggle.open span:nth-child(2) { opacity: 0; }
+    .nav-toggle.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
 
     .section-title { color: #5f98f7; text-align: center; margin: 1.2rem auto 1rem;
       font-size: 1.7rem; max-width: 980px; }
@@ -139,10 +143,10 @@
       <span></span>
     </button>
     <div class="nav-links nav--desktop" role="navigation" id="navLinks">
-      <a href="index.html">Home</a>
-      <a href="index.html">Services</a>
-      <a href="index.html">About</a>
-      <a href="index.html">Testimonials</a>
+      <a href="Index.html#home">Home</a>
+      <a href="Index.html#services">Services</a>
+      <a href="Index.html#about">About</a>
+      <a href="Index.html#testimonials">Testimonials</a>
       <a href="#portfolio" style="background:#5f98f7;color:#111;">Portfolio</a>
     </div>
   </nav>
@@ -322,11 +326,13 @@
       const expanded = navToggle.getAttribute("aria-expanded") === "true";
       navToggle.setAttribute("aria-expanded", String(!expanded));
       navLinks.classList.toggle("open");
+      navToggle.classList.toggle("open");
     });
 
     navLinks.querySelectorAll('a').forEach((link) => {
       link.addEventListener('click', () => {
         navLinks.classList.remove('open');
+        navToggle.classList.remove('open');
         navToggle.setAttribute('aria-expanded', 'false');
       });
     });
